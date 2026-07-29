@@ -26,7 +26,7 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://mono-co
 운영 중에는 [Part 2. 설정 항목 상세](https://mono-communications.github.io/odyssey-manual/#part-2-%EC%84%A4%EC%A0%95-%ED%95%AD%EB%AA%A9-%EC%83%81%EC%84%B8) / [Part 3. 발송 쿼리 모음](https://mono-communications.github.io/odyssey-manual/#part-3-%EB%B0%9C%EC%86%A1-%EC%BF%BC%EB%A6%AC-%EB%AA%A8%EC%9D%8C) / [Part 4. 운영 가이드](https://mono-communications.github.io/odyssey-manual/#part-4-%EC%9A%B4%EC%98%81-%EA%B0%80%EC%9D%B4%EB%93%9C)를 reference로 활용합니다.
 {% endhint %}
 
-#### Part 1. 시작 가이드 <a href="#part-1" id="part-1"></a>
+#### [Part 1. 시작 가이드](./#part-1) <a href="#part-1" id="part-1"></a>
 
 1. [Odyssey 실행 환경](https://mono-communications.github.io/odyssey-manual/#1-odyssey-%EC%8B%A4%ED%96%89-%ED%99%98%EA%B2%BD)
 2. [패키지 구성](https://mono-communications.github.io/odyssey-manual/#2-%ED%8C%A8%ED%82%A4%EC%A7%80-%EA%B5%AC%EC%84%B1)
