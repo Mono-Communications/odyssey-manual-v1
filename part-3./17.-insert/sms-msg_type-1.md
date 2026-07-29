@@ -4,7 +4,7 @@
 >
 > **수신번호(RCPT\_DATA)**, 발**신번호(CALLBACK\_NUM)**&#xB294; 고객사 운영 환경에 맞게 변경하세요.
 
-## SMS 발송 (msg\_type=1)
+## 1. SMS 발송 (msg\_type=1)
 
 ```sql
 INSERT INTO ODYSSEY (
@@ -21,7 +21,7 @@ INSERT INTO ODYSSEY (
 
 
 
-## LMS 발송 (msg\_type=2)
+## 2. LMS 발송 (msg\_type=2)
 
 ```sql
 INSERT INTO ODYSSEY (
@@ -39,7 +39,7 @@ msg_type, submit_time, schedule_time, subject, message, callback_num, rcpt_data
 
 
 
-## MMS 발송 (msg\_type=3)
+## 3. MMS 발송 (msg\_type=3)
 
 ```sql
 INSERT INTO ODYSSEY (
@@ -60,9 +60,9 @@ callback_num, rcpt_data, file_count, file_name1
 
 
 
-## VMS 발송 (msg\_type=4)
+## 4. VMS 발송 (msg\_type=4)
 
-### TTS convert 방식
+### 4-1. TTS convert 방식
 
 ```sql
 INSERT INTO ODYSSEY (
@@ -81,4 +81,4 @@ callback_num, rcpt_data, file_count, file_name1
 );
 ```
 
-### 음성 파일 첨부 방식
+### 4-2. 음성 파일 첨부 방식
