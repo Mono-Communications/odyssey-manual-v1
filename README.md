@@ -62,3 +62,15 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://mono-co
 22. [로그 / 에러 분석](part-4./22./)
 23. [부가 설명](part-4./23./)
 24. [전송 결과 및 참고자료](part-4./24..md)
+
+
+
+***
+
+
+
+_Odyssey 통합 매뉴얼 v2 — © ㈜모노커뮤니케이션즈_
+
+
+
+<p align="center">© 2026 ㈜모노커뮤니케이션즈. All rights reserved.</p>
