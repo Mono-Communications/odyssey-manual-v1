@@ -31,19 +31,19 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://mono-co
 
 #### Part 1. 시작 가이드 <a href="#part-1" id="part-1"></a>
 
-1. [Odyssey 실행 환경](part-1./1.-odyssey.md)
-2. [패키지 구성](part-1./2./)
-3. [첫 실행에 꼭 필요한 설정](part-1./3..md)
-4. [실행 / 정지](part-1./4..md)
+1. [Odyssey 실행 환경](part-1./1.-environment.md)
+2. [패키지 구성](part-1./2.-package/)
+3. [첫 실행에 꼭 필요한 설정](part-1./3.-settings.md)
+4. [실행 / 정지](part-1./4.-start-stop.md)
 5. [Web UI 살펴보기](part-1./5.-web-ui-multi.md)
-6. [테스트 발송 — SMS 1건](part-1./6.-sms-1.md)
-7. [자주 막히는 지점](part-1./7./)
+6. [테스트 발송 — SMS 1건](part-1./6.-test-sms.md)
+7. [자주 막히는 지점](part-1./7.-common-issues/)
 
 #### Part 2. 설정 항목 상세 <a href="#part-2" id="part-2"></a>
 
 8. 환경설정 파일 개요
 9. [패스워드 암호화](part-2./9..md)
-10. [DB 설정](part-2./10.-db/)
+10. [DB 설정](part-2./10.-db.md)
 11. [사용 서비스](part-2./11./)
 12. [테이블명 & 건수 & 주기 설정](part-2./12.-and-and/)
 13. [기본 설정 (common.user)](part-2./13.-common.user/)

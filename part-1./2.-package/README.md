@@ -30,7 +30,7 @@ Odyssey는 **자립형 배포 패키지**로 구성됩니다. 시스템 자바, 
 
 ### **Linux 전용**
 
-<table><thead><tr><th width="197">항목</th><th>설명</th></tr></thead><tbody><tr><td><code>start.sh</code> / <code>stop.sh</code></td><td>시작 / 종료 스크립트 (<a href="../4..md">4. 실행 / 정지</a> 참고)</td></tr></tbody></table>
+<table><thead><tr><th width="197">항목</th><th>설명</th></tr></thead><tbody><tr><td><code>start.sh</code> / <code>stop.sh</code></td><td>시작 / 종료 스크립트 (<a href="../4.-start-stop.md">4. 실행 / 정지</a> 참고)</td></tr></tbody></table>
 
 ### **Windows 전용**
 
