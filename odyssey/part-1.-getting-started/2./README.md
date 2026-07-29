@@ -16,11 +16,11 @@ Odyssey는 **자립형 배포 패키지**로 구성됩니다. 시스템 자바, 
 
 {% tabs %}
 {% tab title="Linux 패키지 구성" %}
-<figure><img src="../../.gitbook/assets/image.png" alt="그림 1. Linux 패키지 구성"><figcaption><p>그림 1. Linux 패키지 구성</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt="그림 1. Linux 패키지 구성"><figcaption><p>그림 1. Linux 패키지 구성</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="Windows 패키지 구성" %}
-<figure><img src="../../.gitbook/assets/image (1).png" alt="그림 2. Windows 패키지 구성"><figcaption><p>그림 2. Windows 패키지 구성</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt="그림 2. Windows 패키지 구성"><figcaption><p>그림 2. Windows 패키지 구성</p></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
