@@ -1,7 +1,5 @@
 # Odyssey 통합 매뉴얼
 
-
-
 > **버전**: v1
 >
 > **작성일**: 2026.04.27
@@ -9,8 +7,6 @@
 > **최종수정일**: 2026.07.29
 >
 > **고객센터**: 02-333-7223
-
-
 
 ***
 
@@ -30,7 +26,7 @@
 
 {% hint style="info" %}
 Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://app.gitbook.com/s/megvpZYNmKCFIZttQbE4/part-1.) 부터 따라가세요. 첫 SMS 실발송까지 단계별로 안내합니다.\
-운영 중에는 [Part 2. 설정 항목 상세](https://app.gitbook.com/s/megvpZYNmKCFIZttQbE4/part-1.) / [Part 3. 발송 쿼리 모음](https://app.gitbook.com/s/megvpZYNmKCFIZttQbE4/part-3.) / [Part 4. 운영 가이드](https://app.gitbook.com/s/megvpZYNmKCFIZttQbE4/part-4.)를 reference로 활용합니다.
+운영 중에는 [Part 2. 설정 항목 상세](https://app.gitbook.com/s/megvpZYNmKCFIZttQbE4/part-2.) / [Part 3. 발송 쿼리 모음](https://app.gitbook.com/s/megvpZYNmKCFIZttQbE4/part-3.) / [Part 4. 운영 가이드](https://app.gitbook.com/s/megvpZYNmKCFIZttQbE4/part-4.)를 reference로 활용합니다.
 {% endhint %}
 
 #### Part 1. 시작 가이드 <a href="#part-1" id="part-1"></a>
@@ -41,7 +37,7 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://app.git
 4. [실행 / 정지](part-1./4.-start-stop.md)
 5. [Web UI 살펴보기](part-1./5.-web-ui-multi.md)
 6. [테스트 발송 — SMS 1건](part-1./6.-test-sms.md)
-7. [자주 막히는 지점](part-1./7.-common-issues/)
+7. [자주 발생하는 문제](part-1./7.-common-issues/)
 
 #### Part 2. 설정 항목 상세 <a href="#part-2" id="part-2"></a>
 
@@ -69,16 +65,10 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://app.git
 23. [부가 설명](part-4./23..md)
 24. [전송 결과 및 참고자료](part-4./24..md)
 
-
-
 ***
-
-
 
 _Odyssey 통합 매뉴얼 v2 — © ㈜모노커뮤니케이션즈_<br>
 
 ***
-
-
 
 <p align="center">© 2026 ㈜모노커뮤니케이션즈. All rights reserved.</p>

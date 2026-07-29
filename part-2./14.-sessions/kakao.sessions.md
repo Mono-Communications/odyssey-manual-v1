@@ -1,5 +1,5 @@
 ---
-description: MNwise Kakao 직접 연동
+description: 앰엔 카카오 직접 연동
 ---
 
 # 14-3. kakao.sessions
