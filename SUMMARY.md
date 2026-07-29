@@ -15,7 +15,7 @@
   * [2-7. libs 폴더 — 네이티브 모니터링 라이브러리](part-1./2./2-7.-libs.md)
 * [3. 첫 실행에 꼭 필요한 설정](part-1./3..md)
 * [4. 실행 / 정지](part-1./4..md)
-* [5. Web UI 살펴보기 (multi 모드 한정)](part-1./5.-web-ui-multi.md)
+* [5. Web UI 살펴보기](part-1./5.-web-ui-multi.md)
 * [6. 테스트 발송 — SMS 1건](part-1./6.-sms-1.md)
 * [7. 자주 막히는 지점](part-1./7./README.md)
   * [7-1. DB 접속 실패](part-1./7./7-1.-db.md)
