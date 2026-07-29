@@ -1,21 +1,15 @@
 # Table of contents
 
-* [1. Odyssey 실행 환경](README.md)
+* [Odyssey 통합 매뉴얼](README.md)
 
 ## PART 1. 시작 가이드
 
 * [Page 3](part-1./page-3.md)
 * [Page 2](part-1./page-2.md)
 
-***
-
-* [2. 패키지 구성](2./README.md)
-  * [Page 1](2./page-1.md)
-* [Odyssey 통합 매뉴얼](odyssey.md)
-
 ## Part 2. 설정 항목 상세
 
-* [8. 환경설정 파일 개요](README.md)
+* [8. 환경설정 파일 개요](/broken/pages/sPUH1MTKcShWNwOveuSz)
 * [9. 패스워드 암호화](part-2./9..md)
 * [10. DB 설정](part-2./10.-db/README.md)
   * [limit — 메시지 발송 타임아웃](part-2./10.-db/limit.md)
