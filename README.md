@@ -39,26 +39,26 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://mono-co
 
 #### Part 2. 설정 항목 상세 <a href="#part-2" id="part-2"></a>
 
-8. [환경설정 파일 개요](https://mono-communications.github.io/odyssey-manual/#8-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95-%ED%8C%8C%EC%9D%BC-%EA%B0%9C%EC%9A%94)
-9. [패스워드 암호화](https://mono-communications.github.io/odyssey-manual/#9-%ED%8C%A8%EC%8A%A4%EC%9B%8C%EB%93%9C-%EC%95%94%ED%98%B8%ED%99%94)
-10. [DB 설정](https://mono-communications.github.io/odyssey-manual/#10-db-%EC%84%A4%EC%A0%95)
-11. [사용 서비스](https://mono-communications.github.io/odyssey-manual/#11-%EC%82%AC%EC%9A%A9-%EC%84%9C%EB%B9%84%EC%8A%A4)
-12. [테이블명 & 건수 & 주기 설정](https://mono-communications.github.io/odyssey-manual/#12-%ED%85%8C%EC%9D%B4%EB%B8%94%EB%AA%85--%EA%B1%B4%EC%88%98--%EC%A3%BC%EA%B8%B0-%EC%84%A4%EC%A0%95)
-13. [기본 설정 (common.user)](https://mono-communications.github.io/odyssey-manual/#13-%EA%B8%B0%EB%B3%B8-%EC%84%A4%EC%A0%95-commonuser)
-14. [계정 설정 (sessions)](https://mono-communications.github.io/odyssey-manual/#14-%EA%B3%84%EC%A0%95-%EC%84%A4%EC%A0%95-sessions)
-15. [HA 이중화 설정 (ha.properties)](https://mono-communications.github.io/odyssey-manual/#15-ha-%EC%9D%B4%EC%A4%91%ED%99%94-%EC%84%A4%EC%A0%95-haproperties)
-16. [Poseidon 모니터링 연동](https://mono-communications.github.io/odyssey-manual/#16-poseidon-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EC%97%B0%EB%8F%99)
+8. 환경설정 파일 개요
+9. [패스워드 암호화](part-2./9..md)
+10. [DB 설정](part-2./10.-db/)
+11. [사용 서비스](part-2./11./)
+12. [테이블명 & 건수 & 주기 설정](part-2./12.-and-and/)
+13. [기본 설정 (common.user)](part-2./13.-common.user/)
+14. [계정 설정 (sessions)](part-2./14.-sessions/)
+15. [HA 이중화 설정 (ha.properties)](part-2./15.-ha-ha.properties/)
+16. [Poseidon 모니터링 연동](part-2./16.-poseidon.md)
 
 #### Part 3. 발송 쿼리 모음 <a href="#part-3" id="part-3"></a>
 
-17. [메시지 타입별 INSERT](https://mono-communications.github.io/odyssey-manual/#17-%EB%A9%94%EC%8B%9C%EC%A7%80-%ED%83%80%EC%9E%85%EB%B3%84-insert)
-18. [MSG\_TYPE / STATUS 코드](https://mono-communications.github.io/odyssey-manual/#18-msg_type--status-%EC%BD%94%EB%93%9C)
-19. [테이블 레이아웃 (MySQL)](https://mono-communications.github.io/odyssey-manual/#19-%ED%85%8C%EC%9D%B4%EB%B8%94-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-mysql)
+17. [메시지 타입별 INSERT](part-3./17.-insert/)
+18. [MSG\_TYPE / STATUS 코드](part-3./18.-msg_type-status/)
+19. [테이블 레이아웃 (MySQL)](part-3./19.-mysql/)
 
 #### Part 4. 운영 가이드 <a href="#part-4" id="part-4"></a>
 
-20. [Web UI 상세](https://mono-communications.github.io/odyssey-manual/#20-web-ui-%EC%83%81%EC%84%B8)
-21. [게이트웨이 IP / PORT](https://mono-communications.github.io/odyssey-manual/#21-%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4-ip--port)
-22. [로그 / 에러 분석](https://mono-communications.github.io/odyssey-manual/#22-%EB%A1%9C%EA%B7%B8--%EC%97%90%EB%9F%AC-%EB%B6%84%EC%84%9D)
-23. [부가 설명](https://mono-communications.github.io/odyssey-manual/#23-%EB%B6%80%EA%B0%80-%EC%84%A4%EB%AA%85)
-24. [전송 결과 및 참고자료](https://mono-communications.github.io/odyssey-manual/#24-%EC%A0%84%EC%86%A1-%EA%B2%B0%EA%B3%BC-%EB%B0%8F-%EC%B0%B8%EA%B3%A0%EC%9E%90%EB%A3%8C)
+20. [Web UI 상세](part-4./20.-web-ui/)
+21. [게이트웨이 IP / PORT](part-4./21.-ip-port/)
+22. [로그 / 에러 분석](part-4./22./)
+23. [부가 설명](part-4./23./)
+24. [전송 결과 및 참고자료](part-4./24..md)

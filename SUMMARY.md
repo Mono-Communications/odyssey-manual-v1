@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Odyssey 통합 매뉴얼 test](README.md)
+* [Odyssey 통합 매뉴얼](README.md)
 
 ## PART 1. 시작 가이드
 
