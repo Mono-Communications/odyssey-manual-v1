@@ -1,2 +1,0 @@
-# 18. MSG\_TYPE / STATUS 코드
-

@@ -7,3 +7,15 @@
 {% content-ref url="sms-msg_type-1.md" %}
 [sms-msg\_type-1.md](sms-msg_type-1.md)
 {% endcontent-ref %}
+
+{% content-ref url="rcs-sms-msg_type-9.md" %}
+[rcs-sms-msg\_type-9.md](rcs-sms-msg_type-9.md)
+{% endcontent-ref %}
+
+{% content-ref url="msg_type-6.md" %}
+[msg\_type-6.md](msg_type-6.md)
+{% endcontent-ref %}
+
+{% content-ref url="fallback-1-2-3.md" %}
+[fallback-1-2-3.md](fallback-1-2-3.md)
+{% endcontent-ref %}

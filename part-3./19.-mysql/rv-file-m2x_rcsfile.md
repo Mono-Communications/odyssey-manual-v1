@@ -1,15 +1,3 @@
 # rv-file (M2X\_RCSFILE) 테이블
 
-| 컬럼명          | 데이터 타입                     | NN                     | 기본값                 | 설명 |
-| ------------ | -------------------------- | ---------------------- | ------------------- | -- |
-| ID           | BIGINT(20) AUTO\_INCREMENT | Y                      | 첨부파일 유니크 번호 (PK)    |    |
-| FILE\_PATH   | VARCHAR(200)               | Y                      | 발송테이블에 사용된 파일 경로    |    |
-| DESCRIPTION  | VARCHAR(500)               | 파일 최종 수정 정보 (동명 파일 대비) |                     |    |
-| STATUS       | SMALLINT                   | 0                      | 0=대기, 2=치환 가능, 3=실패 |    |
-| FILEID       | VARCHAR(64)                | 자동 업로드된 파일 ID          |                     |    |
-| SUBMIT\_TIME | VARCHAR(16)                | Y                      | 등록 시각               |    |
-| UPLOAD\_TIME | VARCHAR(16)                | 업로드 시각                 |                     |    |
-| EXPIRY\_TIME | VARCHAR(16)                | 만료 시각                  |                     |    |
-| RESULT       | INT(6)                     | -2                     | 업로드 결과값             |    |
-| RESULT\_DESC | VARCHAR(1000)              | 결과값 상세                 |                     |    |
-| RCS\_ID      | VARCHAR(20)                | 발송 세션 RCS\_ID          |                     |    |
+<table><thead><tr><th width="143.20001220703125">컬럼명</th><th width="179.79998779296875">데이터 타입</th><th>NN</th><th width="220.199951171875">기본값</th><th>설명</th></tr></thead><tbody><tr><td>ID</td><td>BIGINT(20) AUTO_INCREMENT</td><td>Y</td><td>첨부파일 유니크 번호 (PK)</td><td></td></tr><tr><td>FILE_PATH</td><td>VARCHAR(200)</td><td>Y</td><td>발송테이블에 사용된 파일 경로</td><td></td></tr><tr><td>DESCRIPTION</td><td>VARCHAR(500)</td><td>파일 최종 수정 정보 (동명 파일 대비)</td><td></td><td></td></tr><tr><td>STATUS</td><td>SMALLINT</td><td>0</td><td>0=대기, 2=치환 가능, 3=실패</td><td></td></tr><tr><td>FILEID</td><td>VARCHAR(64)</td><td>자동 업로드된 파일 ID</td><td></td><td></td></tr><tr><td>SUBMIT_TIME</td><td>VARCHAR(16)</td><td>Y</td><td>등록 시각</td><td></td></tr><tr><td>UPLOAD_TIME</td><td>VARCHAR(16)</td><td>업로드 시각</td><td></td><td></td></tr><tr><td>EXPIRY_TIME</td><td>VARCHAR(16)</td><td>만료 시각</td><td></td><td></td></tr><tr><td>RESULT</td><td>INT(6)</td><td>-2</td><td>업로드 결과값</td><td></td></tr><tr><td>RESULT_DESC</td><td>VARCHAR(1000)</td><td>결과값 상세</td><td></td><td></td></tr><tr><td>RCS_ID</td><td>VARCHAR(20)</td><td>발송 세션 RCS_ID</td><td></td><td></td></tr></tbody></table>

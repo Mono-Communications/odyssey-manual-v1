@@ -1,5 +1,7 @@
 # Odyssey 통합 매뉴얼
 
+
+
 > **버전**: v1
 >
 > **작성일**: 2026.04.27
@@ -9,6 +11,8 @@
 > **고객센터**: 02-333-7223
 
 
+
+***
 
 ## 들어가기 전에
 
@@ -25,8 +29,8 @@
 ## 목차
 
 {% hint style="info" %}
-Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://mono-communications.github.io/odyssey-manual/#part-1-%EC%8B%9C%EC%9E%91-%EA%B0%80%EC%9D%B4%EB%93%9C) 부터 따라가세요. 첫 SMS 실발송까지 단계별로 안내합니다.\
-운영 중에는 [Part 2. 설정 항목 상세](https://mono-communications.github.io/odyssey-manual/#part-2-%EC%84%A4%EC%A0%95-%ED%95%AD%EB%AA%A9-%EC%83%81%EC%84%B8) / [Part 3. 발송 쿼리 모음](https://mono-communications.github.io/odyssey-manual/#part-3-%EB%B0%9C%EC%86%A1-%EC%BF%BC%EB%A6%AC-%EB%AA%A8%EC%9D%8C) / [Part 4. 운영 가이드](https://mono-communications.github.io/odyssey-manual/#part-4-%EC%9A%B4%EC%98%81-%EA%B0%80%EC%9D%B4%EB%93%9C)를 reference로 활용합니다.
+Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://app.gitbook.com/s/megvpZYNmKCFIZttQbE4/part-1.) 부터 따라가세요. 첫 SMS 실발송까지 단계별로 안내합니다.\
+운영 중에는 [Part 2. 설정 항목 상세](https://app.gitbook.com/s/megvpZYNmKCFIZttQbE4/part-1.) / [Part 3. 발송 쿼리 모음](https://app.gitbook.com/s/megvpZYNmKCFIZttQbE4/part-3.) / [Part 4. 운영 가이드](https://app.gitbook.com/s/megvpZYNmKCFIZttQbE4/part-4.)를 reference로 활용합니다.
 {% endhint %}
 
 #### Part 1. 시작 가이드 <a href="#part-1" id="part-1"></a>
@@ -41,7 +45,7 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://mono-co
 
 #### Part 2. 설정 항목 상세 <a href="#part-2" id="part-2"></a>
 
-8. 환경설정 파일 개요
+8. [환경설정 파일 개요](part-2./8..md)
 9. [패스워드 암호화](part-2./9..md)
 10. [DB 설정](part-2./10.-db.md)
 11. [사용 서비스](part-2./11..md)
@@ -54,15 +58,15 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://mono-co
 #### Part 3. 발송 쿼리 모음 <a href="#part-3" id="part-3"></a>
 
 17. [메시지 타입별 INSERT](part-3./17.-insert/)
-18. [MSG\_TYPE / STATUS 코드](part-3./18.-msg_type-status/)
+18. [MSG\_TYPE / STATUS 코드](part-3./18.-msg_type-status.md)
 19. [테이블 레이아웃 (MySQL)](part-3./19.-mysql/)
 
 #### Part 4. 운영 가이드 <a href="#part-4" id="part-4"></a>
 
 20. [Web UI 상세](part-4./20.-web-ui/)
-21. [게이트웨이 IP / PORT](part-4./21.-ip-port/)
-22. [로그 / 에러 분석](part-4./22./)
-23. [부가 설명](part-4./23./)
+21. [게이트웨이 IP / PORT](part-4./21.-ip-port.md)
+22. [로그 / 에러 분석](part-4./22..md)
+23. [부가 설명](part-4./23..md)
 24. [전송 결과 및 참고자료](part-4./24..md)
 
 
@@ -71,7 +75,9 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://mono-co
 
 
 
-_Odyssey 통합 매뉴얼 v2 — © ㈜모노커뮤니케이션즈_
+_Odyssey 통합 매뉴얼 v2 — © ㈜모노커뮤니케이션즈_<br>
+
+***
 
 
 
