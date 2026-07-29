@@ -44,9 +44,9 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://mono-co
 8. 환경설정 파일 개요
 9. [패스워드 암호화](part-2./9..md)
 10. [DB 설정](part-2./10.-db.md)
-11. [사용 서비스](part-2./11./)
+11. [사용 서비스](part-2./11..md)
 12. [테이블명 & 건수 & 주기 설정](part-2./12.-and-and/)
-13. [기본 설정 (common.user)](part-2./13.-common.user/)
+13. [기본 설정 (common.user)](part-2./13.-common.user.md)
 14. [계정 설정 (sessions)](part-2./14.-sessions/)
 15. [HA 이중화 설정 (ha.properties)](part-2./15.-ha-ha.properties/)
 16. [Poseidon 모니터링 연동](part-2./16.-poseidon.md)

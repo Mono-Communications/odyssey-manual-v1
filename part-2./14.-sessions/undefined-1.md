@@ -1,21 +1,12 @@
-# 권장 설정 (게이트웨이별)
+# 14-5. 게이트웨이 별 권장 설정
 
-
-
-| 메시지 종류          | 사용 게이트웨이       | 설정해야 할 세션 영역   | max-cnt 기본 |
-| --------------- | -------------- | -------------- | ---------- |
-| SMS / LMS / MMS | KT 크로샷 (직접 연동) | kt.sessions    | 200        |
-| SMS / LMS / MMS | KT CPaaS       | cpaas.sessions | 20         |
-| RCS             | KT RCS Hermes  | rcs.sessions   | 30         |
-| RCS             | KT CPaaS       | cpaas.sessions | 20         |
-| 카카오 알림톡/친구톡     | 엠앤와이즈          | kakao.sessions | (계약값)      |
-| 카카오 알림톡/친구톡     | KT CPaaS       | cpaas.sessions | 20         |
+<table><thead><tr><th width="217.800048828125">메시지 종류</th><th width="214.9998779296875">사용 게이트웨이</th><th width="173">설정해야 할 세션 영역</th><th>max-cnt 기본</th></tr></thead><tbody><tr><td>SMS / LMS / MMS / VMS</td><td>KT Xroshot (직접 연동)</td><td>kt.sessions</td><td>200</td></tr><tr><td>SMS / LMS / MMS</td><td>KT CPaaS</td><td>cpaas.sessions</td><td>20</td></tr><tr><td>RCS</td><td>KT RCS Hermes</td><td>rcs.sessions</td><td>30</td></tr><tr><td>RCS</td><td>KT CPaaS</td><td>cpaas.sessions</td><td>20</td></tr><tr><td>카카오 알림톡/친구톡</td><td>엠앤와이즈</td><td>kakao.sessions</td><td>(계약값)</td></tr><tr><td>카카오 알림톡/친구톡</td><td>KT CPaaS</td><td>cpaas.sessions</td><td>20</td></tr></tbody></table>
 
 {% hint style="warning" %}
 **모든 세션의 `max-cnt`는 게이트웨이와 계약한 초당 발송 한도와 정확히 일치해야 합니다.** 처리량을 늘리려면 `max-cnt`를 키우는 것이 아니라 **세션을 추가**하거나 **계약 한도를 상향**합니다.
 {% endhint %}
 
-{% hint style="warning" %}
+{% hint style="info" %}
 **자주 하는 실수**
 
 1. **`max-cnt`를 계약 한도보다 크게 설정** — 게이트웨이가 초과분을 차단하여 일정 시간 발송이 실패합니다. 계약값과 정확히 동일하게 설정하세요.
