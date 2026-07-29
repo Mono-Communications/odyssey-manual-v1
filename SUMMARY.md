@@ -5,7 +5,23 @@
 ## PART 1. 시작 가이드
 
 * [1. Odyssey 실행 환경](part-1./1.-odyssey.md)
-* [Page 1](part-1./page-1.md)
+* [2.패키지 구성](part-1./2./README.md)
+  * [2-1. config 폴더](part-1./2./2-1.-config.md)
+  * [2-2. config/mapper 폴더 — 매퍼 외부화](part-1./2./2-2.-config-mapper.md)
+  * [2-3. auth 폴더](part-1./2./2-3.-auth.md)
+  * [2-4. lib 폴더 — 외부 라이브러리](part-1./2./2-4.-lib.md)
+  * [2-5. jre 폴더 — 번들 JRE](part-1./2./2-5.-jre-jre.md)
+  * [2-6. Windows 전용 파일](part-1./2./2-6.-windows.md)
+  * [2-7. libs 폴더 — 네이티브 모니터링 라이브러리](part-1./2./2-7.-libs.md)
+* [3. 첫 실행에 꼭 필요한 설정](part-1./3./README.md)
+  * [3-1. DB 연결 (spring.datasource.hikari)](part-1./3./3-1.-db-spring.datasource.hikari.md)
+  * [3-2. 사용 메시지 종류 (common.execute)](part-1./3./3-2.-common.execute.md)
+  * [3-3. 발송 경로 (common.transmission)](part-1./3./3-3.-common.transmission.md)
+  * [3-4. 테이블명 (common.tables.table-name)](part-1./3./3-4.-common.tables.table-name.md)
+  * [3-5. 발송 처리 건수 (common.tables.fetch-count)](part-1./3./3-5.-common.tables.fetch-count.md)
+  * [3-6. 게이트웨이 세션 (사용하는 것만)](part-1./3./3-6..md)
+  * [3-7. RCS 발송 시 추가 설정 (common.user)](part-1./3./3-7.-rcs-common.user.md)
+  * [그 외 옵션](part-1./3./undefined.md)
 
 ## Part 2. 설정 항목 상세
 

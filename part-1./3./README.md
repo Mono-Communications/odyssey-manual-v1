@@ -1,0 +1,188 @@
+# 3. 첫 실행에 꼭 필요한 설정
+
+`config/application-HA.yaml`을 열어 아래 항목들을 운영 환경에 맞게 입력합니다. 그 외 옵션은 [Part 2. 설정 항목 상세](https://mono-communications.github.io/odyssey-manual/#part-2-%EC%84%A4%EC%A0%95-%ED%95%AD%EB%AA%A9-%EC%83%81%EC%84%B8)를 참고하세요.
+
+#### 3-1. DB 연결 (`spring.datasource.hikari`) <a href="#id-3-1-db-springdatasourcehikari" id="id-3-1-db-springdatasourcehikari"></a>
+
+```yaml
+spring:
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://{{ip}}:{{port}}/{{database}}?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true
+      username: {{id}}
+      password: {{pw}}        # OTP 기반 암호문 입력 권장
+```
+
+yamlCopy
+
+| 항목         | 입력                                                                                                                                                               |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `jdbc-url` | 고객사 DB 서버 IP / 포트 / DB명                                                                                                                                          |
+| `username` | DB 접속 계정                                                                                                                                                         |
+| `password` | DB 접속 패스워드 (암호화 권장 — [9장 패스워드 암호화](https://mono-communications.github.io/odyssey-manual/#9-%ED%8C%A8%EC%8A%A4%EC%9B%8C%EB%93%9C-%EC%95%94%ED%98%B8%ED%99%94) 참고) |
+
+#### 3-2. 사용 메시지 종류 (`common.execute`) <a href="#id-3-2-commonexecute" id="id-3-2-commonexecute"></a>
+
+발송할 메시지 종류만 `true`로 설정합니다. 사용하지 않는 종류는 `false`로 두면 불필요한 DB 폴링이 줄어 부하가 낮아집니다.
+
+```yaml
+common:
+  execute:
+    sms: true
+    lms: true
+    mms: true
+    rcs: false       # RCS 사용 시 true
+    kakao: false     # 카카오 알림톡/친구톡 사용 시 true
+    fetch: true      # 로그 이관 (HA 운영 시 true 권장)
+```
+
+yamlCopy
+
+#### 3-3. 발송 경로 (`common.transmission`) <a href="#id-3-3-commontransmission" id="id-3-3-commontransmission"></a>
+
+각 메시지 그룹별로 어떤 게이트웨이를 통해 발송할지 지정합니다. **반드시 계약된 게이트웨이와 일치**해야 합니다.
+
+```yaml
+common:
+  transmission:
+    msg: KT          # 문자: KT (KT 크로샷) | CPAAS
+    rcs: KT          # RCS: KT (KT RCS Hermes API) | CPAAS
+    kakao: CPAAS     # 카카오: MN (엠앤와이즈) | CPAAS
+```
+
+yamlCopy
+
+#### 3-4. 테이블명 (`common.tables.table-name`) <a href="#id-3-4-commontablestable-name" id="id-3-4-commontablestable-name"></a>
+
+Odyssey가 자동 생성할 테이블 이름을 지정합니다. 일반적으로 기본값을 사용하며, 고객사 DB에 같은 이름의 기존 테이블이 있는 경우에만 충돌 방지를 위해 변경합니다.
+
+```yaml
+common:
+  tables:
+    table-name:
+      rv-submit: ODYSSEY              # 메시지 발송 테이블 (고객사가 INSERT 하는 대상)
+      rv-submit-log: ODYSSEY_LOG      # 발송 완료 메시지 이관 테이블
+      rv-stat: ODYSSEY_STAT           # 발송 통계 테이블
+      rv-file: ODYSSEY_RCSFILE        # RCS 이미지 파일 테이블
+      rv-tmpl-stat: ODYSSEY_TEMPLATE_STAT  # RCS 템플릿 발송 통계
+```
+
+yamlCopy
+
+> **참고:** 위 5개 테이블 + `ha_lease`, `PAUSE_INFO` 테이블은 Odyssey 최초 기동 시 자동 생성됩니다. 운영 환경에서는 미리 DB CREATE/INSERT/SELECT 권한을 부여해 두시기 바랍니다.
+
+#### 3-5. 발송 처리 건수 (`common.tables.fetch-count`) <a href="#id-3-5-commontablesfetch-count" id="id-3-5-commontablesfetch-count"></a>
+
+각 서비스가 1초당 DB에서 가져와 발송할 최대 메시지 건수입니다. **첫 실행 시 기본값 그대로 사용해도 무방**하며, 발송량이 크게 다르면 [12장 테이블명 & 건수 & 주기 설정](https://mono-communications.github.io/odyssey-manual/#12-%ED%85%8C%EC%9D%B4%EB%B8%94%EB%AA%85--%EA%B1%B4%EC%88%98--%EC%A3%BC%EA%B8%B0-%EC%84%A4%EC%A0%95)을 참고해 비례 조정합니다.
+
+```yaml
+common:
+  tables:
+    fetch-count:
+      sms: 200
+      lms: 200
+      mms: 50
+      rcs: 60
+      kakao: 400
+      fetch: 1000
+```
+
+yamlCopy
+
+> **참고:** 각 세션의 `max-cnt` 합과 같거나 약간 큰 값으로 설정하는 것이 원칙입니다. 세션 한도 이상으로 늘려도 게이트웨이에서 차단되어 의미가 없습니다.
+
+#### 3-6. 게이트웨이 세션 (사용하는 것만) <a href="#id-3-6" id="id-3-6"></a>
+
+`common.transmission`에서 지정한 게이트웨이의 세션 정보를 입력합니다. 사용하지 않는 게이트웨이 영역은 통째로 주석 처리하거나 삭제합니다.
+
+각 세션의 `max-cnt`는 **계약한 초당 발송 한도와 정확히 일치**시켜야 합니다.
+
+**KT 크로샷 (`transmission.msg = KT`)**
+
+```yaml
+kt:
+  sessions:
+    - seq: 1
+      rcs-ip: rcs.xroshot.com
+      sp-id: {{xroshot_id}}
+      sp-pwd: {{xroshot_pw}}      
+      end-user: {{user}}
+      auth-file: {{cert_file}}    # auth/ 폴더의 .cert 파일명과 일치
+      max-cnt: 200                # 권장
+      sms: true
+      lms: true
+      mms: true
+```
+
+yamlCopy
+
+**KT RCS (`transmission.rcs = KT`)**
+
+```yaml
+rcs:
+  sessions:
+    - seq: 1
+      send-url: https://agency.hermes.kt.com/corp/v1
+      report-url: https://query.hermes.kt.com/corp/v1
+      rcs-id: {{rcs_id}}
+      rcs-secret: {{rcs_pw}}       
+      agencyid: ktbizrcs
+      max-cnt: 30                  # 권장
+```
+
+yamlCopy
+
+**CPaaS (`transmission.msg = CPAAS` / `rcs = CPAAS` / `kakao = CPAAS`)**
+
+```yaml
+cpaas:
+  sessions:
+    - seq: 1
+      send-url: https://api.communis.kt.com/cpaas/v2.0
+      report-url: https://api.communis.kt.com/cpaas/v2.0
+      api-id: {{communis_id}}
+      api-pw: {{communis_pw}}      
+      sender-key: {{kakao_senderkey}}
+      max-cnt: 20                  # 권장
+```
+
+yamlCopy
+
+**엠앤와이즈 카카오 (`transmission.kakao = MN`)**
+
+```yaml
+kakao:
+  sessions:
+    - seq: 1
+      send-url: https://wt-api.carrym.com:8443/v3
+      report-url: https://wt-api.carrym.com:8443/v3
+      api-id: {{api_id}}
+      api-key: {{api_key}}
+      sender-key: {{sender_key}}
+      max-cnt: 0
+```
+
+yamlCopy
+
+> **참고:** 옵션 전체 설명과 추가 항목(`expiry-option`, `report-cycle` 등)은 [14장 계정 설정 (sessions)](https://mono-communications.github.io/odyssey-manual/#14-%EA%B3%84%EC%A0%95-%EC%84%A4%EC%A0%95-sessions) 참고.
+
+#### 3-7. RCS 발송 시 추가 설정 (`common.user`) <a href="#id-3-7-rcs-commonuser" id="id-3-7-rcs-commonuser"></a>
+
+CPaaS RCS로 발송하는 경우 다음 KEY를 입력합니다. RCS 청약 시 발급받습니다.
+
+```yaml
+common:
+  user:
+    agencykey: {{agency_key}}    # 대행사 KEY
+    brandid: {{brand_id}}        # 브랜드 ID
+    brandkey: {{brand_key}}      # 브랜드 KEY
+```
+
+yamlCopy
+
+> **참고:** RCS를 사용하지 않는 환경은 빈 문자열(`''`) 또는 키 자체를 생략해도 됩니다.
+
+#### 그 외 옵션 <a href="#undefined" id="undefined"></a>
+
+`common.user`의 ping/restart 타이밍, RCS MMS 자동 업로드, OTP 등 세부 옵션은 모두 기본값이 안전합니다. 운영 중 조정이 필요할 때 [13장 기본 설정 (common.user)](https://mono-communications.github.io/odyssey-manual/#13-%EA%B8%B0%EB%B3%B8-%EC%84%A4%EC%A0%95-commonuser)를 참고하세요.
