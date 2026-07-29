@@ -29,13 +29,13 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://mono-co
 
 #### Part 1. 시작 가이드 <a href="#part-1" id="part-1"></a>
 
-1. [Odyssey 실행 환경](https://mono-communications.github.io/odyssey-manual/#1-odyssey-%EC%8B%A4%ED%96%89-%ED%99%98%EA%B2%BD)
-2. [패키지 구성](https://mono-communications.github.io/odyssey-manual/#2-%ED%8C%A8%ED%82%A4%EC%A7%80-%EA%B5%AC%EC%84%B1)
-3. [첫 실행에 꼭 필요한 설정](https://mono-communications.github.io/odyssey-manual/#3-%EC%B2%AB-%EC%8B%A4%ED%96%89%EC%97%90-%EA%BC%AD-%ED%95%84%EC%9A%94%ED%95%9C-%EC%84%A4%EC%A0%95)
-4. [실행 / 정지](https://mono-communications.github.io/odyssey-manual/#4-%EC%8B%A4%ED%96%89--%EC%A0%95%EC%A7%80)
-5. [Web UI 살펴보기](https://mono-communications.github.io/odyssey-manual/#5-web-ui-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0-multi-%EB%AA%A8%EB%93%9C-%ED%95%9C%EC%A0%95)
-6. [테스트 발송 — SMS 1건](https://mono-communications.github.io/odyssey-manual/#6-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%B0%9C%EC%86%A1--sms-1%EA%B1%B4)
-7. [자주 막히는 지점](https://mono-communications.github.io/odyssey-manual/#7-%EC%9E%90%EC%A3%BC-%EB%A7%89%ED%9E%88%EB%8A%94-%EC%A7%80%EC%A0%90)
+1. [Odyssey 실행 환경](part-1./1.-odyssey.md)
+2. [패키지 구성](part-1./2./)
+3. [첫 실행에 꼭 필요한 설정](part-1./3..md)
+4. [실행 / 정지](part-1./4..md)
+5. [Web UI 살펴보기](part-1./5.-web-ui-multi.md)
+6. [테스트 발송 — SMS 1건](part-1./6.-sms-1.md)
+7. [자주 막히는 지점](part-1./7./)
 
 #### Part 2. 설정 항목 상세 <a href="#part-2" id="part-2"></a>
 
