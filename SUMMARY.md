@@ -1,10 +1,8 @@
 # Table of contents
 
-* [Odyssey 통합 매뉴얼](README.md)
-
 ## Part 2. 설정 항목 상세
 
-* [8. 환경설정 파일 개요](part-2./8..md)
+* [8. 환경설정 파일 개요](README.md)
 * [9. 패스워드 암호화](part-2./9..md)
 * [10. DB 설정](part-2./10.-db/README.md)
   * [limit — 메시지 발송 타임아웃](part-2./10.-db/limit.md)
