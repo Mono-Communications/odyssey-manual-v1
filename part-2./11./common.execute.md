@@ -1,5 +1,16 @@
 # common.execute (사용 메시지 종류)
 
+```yml
+execute:
+  sms: true
+  lms: true
+  mms: true
+  vms: true
+  rcs: true
+  kakao: true
+  fetch: true
+```
+
 | 옵션          | 설명                                   |
 | ----------- | ------------------------------------ |
 | **`sms`**   | SMS 발송 사용 여부. (true/false)           |
