@@ -16,17 +16,17 @@ Odyssey는 **자립형 배포 패키지**로 구성됩니다. 시스템 자바, 
 
 {% tabs %}
 {% tab title="Linux 패키지 구성" %}
-<figure><img src="../../.gitbook/assets/image.png" alt="그림 1. Linux 패키지 구성"><figcaption><p>그림 1. Linux 패키지 구성</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/1_Linux_패키지.png" alt="그림 1. Linux 패키지 구성"><figcaption><p>그림 1. Linux 패키지 구성</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="Windows 패키지 구성" %}
-<figure><img src="../../.gitbook/assets/image (1).png" alt="그림 2. Windows 패키지 구성"><figcaption><p>그림 2. Windows 패키지 구성</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2_Windows_패키지.png" alt="그림 2. Windows 패키지 구성"><figcaption><p>그림 2. Windows 패키지 구성</p></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
 ### **공통 항목**
 
-<table><thead><tr><th width="259">항목</th><th>설명</th></tr></thead><tbody><tr><td><code>odyssey-app-1.0.0.jar</code> / <code>odyssey-pipeline-1.0.0.jar</code></td><td>자사 코드 (thin jar — 외부 lib/ 와 함께 동작)</td></tr><tr><td><code>lib/</code></td><td>외부 라이브러리 폴더 — Spring Boot, JDBC 드라이버, Netty 등 (<a href="2-4.-lib.md">2-4. lib폴더 — 외부라이브러리</a> 참고)</td></tr><tr><td><code>libs/</code></td><td>운영 모니터링 네이티브 라이브러리 폴더 — <code>cypher.dll</code>(Windows) / <code>libcypher.so</code>(Linux) (<a href="2-7.-libs.md">2-7. libs 폴더 — 네이티브 모니터링 라이브러리</a> 참고)</td></tr><tr><td><code>jre/</code></td><td>번들 Java 21 JRE — 시스템 자바와 무관하게 동작 (<a href="2-5.-jre-jre.md">2-5. jre 폴더 — 번들 JRE</a> 참고)</td></tr><tr><td><code>config/</code></td><td>환경설정 폴더 — <code>application-HA.yaml</code>, <code>ha.properties</code>, <code>mapper/</code>  (<a href="2-1.-config.md">2-1. config 폴더</a>,  <a href="2-2.-config-mapper.md">2-2. config/mapper 폴더 — 매퍼 외부화</a> 참고)</td></tr><tr><td><code>auth/</code></td><td>KT 크로샷 세션 인증파일(<code>.cert</code>) 폴더</td></tr><tr><td><code>upload/</code></td><td>RCS MMS 첨부 이미지 파일 폴더 (자동 업로드 사용 시)</td></tr><tr><td><code>log/</code> (자동 생성)</td><td>실행 로그 폴더 — <code>agent.log</code>(전체 로그), <code>error.log</code>, <code>router.log</code> 등 모듈별 파일</td></tr><tr><td><code>pids/</code> (자동 생성)</td><td>실행 중 프로세스 PID 파일 폴더</td></tr><tr><td><code>log_backup/</code> (자동 생성)</td><td>일별 압축 로그 백업</td></tr><tr><td><code>backup/</code> (자동 생성)</td><td>Web UI 설정 변경 백업</td></tr></tbody></table>
+<table><thead><tr><th width="259">항목</th><th>설명</th></tr></thead><tbody><tr><td><code>odyssey-app-1.0.0.jar</code> / <code>odyssey-pipeline-1.0.0.jar</code></td><td>자사 코드 (thin jar — 외부 <code>lib/</code> 와 함께 동작)</td></tr><tr><td><code>lib/</code></td><td>외부 라이브러리 폴더 — Spring Boot, JDBC 드라이버, Netty 등 (<a href="2-4.-lib.md">2-4. lib폴더 — 외부라이브러리</a> 참고)</td></tr><tr><td><code>libs/</code></td><td>운영 모니터링 네이티브 라이브러리 폴더 — <code>cypher.dll</code>(Windows) / <code>libcypher.so</code>(Linux) (<a href="2-7.-libs.md">2-7. libs 폴더 — 네이티브 모니터링 라이브러리</a> 참고)</td></tr><tr><td><code>jre/</code></td><td>번들 Java 21 JRE — 시스템 자바와 무관하게 동작 (<a href="2-5.-jre-jre.md">2-5. jre 폴더 — 번들 JRE</a> 참고)</td></tr><tr><td><code>config/</code></td><td>환경설정 폴더 — <code>application-HA.yaml</code>, <code>ha.properties</code>, <code>mapper/</code> (<a href="2-1.-config.md">2-1. config 폴더</a>, <a href="2-2.-config-mapper.md">2-2. config/mapper 폴더 — 매퍼 외부화</a> 참고)</td></tr><tr><td><code>auth/</code></td><td>KT 크로샷 세션 인증파일(<code>.cert</code>) 폴더</td></tr><tr><td><code>upload/</code></td><td>RCS MMS 첨부 이미지 파일 폴더 (자동 업로드 사용 시)</td></tr><tr><td><code>log/</code> (자동 생성)</td><td>실행 로그 폴더 — <code>agent.log</code>(전체 로그), <code>error.log</code>, <code>router.log</code> 등 모듈별 파일</td></tr><tr><td><code>pids/</code> (자동 생성)</td><td>실행 중 프로세스 PID 파일 폴더</td></tr><tr><td><code>log_backup/</code> (자동 생성)</td><td>일별 압축 로그 백업</td></tr><tr><td><code>backup/</code> (자동 생성)</td><td>Web UI 설정 변경 백업</td></tr></tbody></table>
 
 ### **Linux 전용**
 
@@ -37,5 +37,5 @@ Odyssey는 **자립형 배포 패키지**로 구성됩니다. 시스템 자바, 
 <table><thead><tr><th width="229">항목</th><th>설명</th></tr></thead><tbody><tr><td><code>start.bat</code> / <code>stop.bat</code></td><td>수동 실행 / 종료 스크립트 — 더블클릭 또는 cmd 에서 실행 ( <a href="2-6.-windows.md">2-6. Windows 전용 파일</a> 참고)</td></tr><tr><td><code>installService.bat</code> / <code>unInstallService.bat</code></td><td>Windows 서비스 등록 / 해제 — 24/7 운영 시 사용</td></tr><tr><td><code>Odyssey.exe</code></td><td>WinSW (Windows Service Wrapper) — 서비스 등록의 wrapper 역할</td></tr><tr><td><code>Odyssey-multi.xml</code> / <code>Odyssey-pipeline.xml</code></td><td>서비스 모드별 설정 template — <code>installService.bat</code> 이 메뉴 선택에 따라 활성화</td></tr></tbody></table>
 
 {% hint style="info" %}
-<mark style="color:$primary;">**참고 :**</mark> 자사 코드 jar 는 본체만 포함된 작은 파일(수백 KB)이며, 실제 의존 라이브러리는 외부 `lib/` 폴더에서 로딩됩니다. 드라이버 등 라이브러리 교체 시 jar 재빌드 없이 `lib/` 안의 jar 만 교체하면 됩니다.
+자사 코드 jar 는 본체만 포함된 작은 파일(수백 KB)이며, 실제 의존 라이브러리는 외부 `lib/` 폴더에서 로딩됩니다. 드라이버 등 라이브러리 교체 시 jar 재빌드 없이 `lib/` 안의 jar 만 교체하면 됩니다.
 {% endhint %}

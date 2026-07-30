@@ -2,7 +2,7 @@
 
 > **SCHEDULE\_TIME**, **SUBMIT\_TIME**의 포맷은 고객사 DB에 맞게 변경하세요.
 >
-> **수신번호(RCPT\_DATA)**, 발**신번호(CALLBACK\_NUM)**&#xB294; 고객사 운영 환경에 맞게 변경하세요.
+> **수신번호(RCPT\_DATA)**, **발신번호(CALLBACK\_NUM)**&#xB294; 고객사 운영 환경에 맞게 변경하세요.
 
 ## 1. SMS 발송 (msg\_type=1)
 
@@ -56,16 +56,16 @@ callback_num, rcpt_data, file_count, file_name1
 
 ## 4. VMS 발송 (msg\_type=4)
 
-* VMS는 TTS convert로 보내는 방식과 음성 파일을 직접 첨부하는 방식으로 나뉩니다.
-* VMS는 KT Xroshot 방식으로만 발송 가능하며, 따라서 2차/3차 발송은 없습니다.
+* VMS는 음성 파일을 직접 첨부하는 방식과 TTS convert로 보내는 방식으로 나뉩니다.
+* VMS는 **KT 크로샷**으로만 발송 가능하며, 따라서 **2차/3차 발송은 없습니다**.
   * msg\_type\_second, msg\_type\_third : 0
   * fail\_send : 'N'
 
-#### 우선순위
+### 발송우선순위
 
-1. 첨부 파일이 있을 때 : 음성 파일 첨부 방식
-2. 첨부 파일이 없고, message(content)가 있을 때 : TTS convert 방식
-3. 첨부 파일이 없고, message도 없을 때 : 오류 발생
+1. **첨부 파일이 있을 때** — 음성 파일 첨부 방식
+2. 첨부 파일이 없고, **message(content)가 있을 때** — TTS convert 방식
+3. 첨부 파일이 없고, message도 없을 때 — 오류 발생
 
 ### 4-1. 음성 파일 첨부 방식
 
@@ -102,7 +102,7 @@ callback_num, rcpt_data, file_count, file_name1, fail_send
     '발신번호',
     '수신번호',
     0,                                -- 첨부파일 없어야 함
-    '',                             -- 첨부파일명 없어야 함
+    '',                             
     'N'                                -- fail_send(2,3차 발송) 없음
 );
 ```

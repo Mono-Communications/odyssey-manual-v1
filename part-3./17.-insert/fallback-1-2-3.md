@@ -4,6 +4,10 @@ description: 1차 실패 시 2차, 3차 순차 발송
 
 # 17-4. FALLBACK 발송
 
+> **SCHEDULE\_TIME**, **SUBMIT\_TIME**의 포맷은 고객사 DB에 맞게 변경하세요.
+>
+> **수신번호(RCPT\_DATA)**, **발신번호(CALLBACK\_NUM)**&#xB294; 고객사 운영 환경에 맞게 변경하세요.
+
 1차 발송이 실패한 경우 2차, 3차 발송을 자동으로 시도합니다. `msg_type` / `msg_type_second` / `msg_type_third` 순서로 발송하며, 각 메시지에 필요한 모든 컬럼을 함께 입력하고 `FAIL_SEND` 를 `'Y'`로 설정해야 합니다.
 
 ```sql

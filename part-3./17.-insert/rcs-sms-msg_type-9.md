@@ -1,5 +1,9 @@
 # 17-2. RCS
 
+> **SCHEDULE\_TIME**, **SUBMIT\_TIME**의 포맷은 고객사 DB에 맞게 변경하세요.
+>
+> **수신번호(RCPT\_DATA)**, **발신번호(CALLBACK\_NUM)**&#xB294; 고객사 운영 환경에 맞게 변경하세요.
+
 ## 1. RCS SMS 발송 (msg\_type=9)
 
 ```sql
@@ -22,8 +26,6 @@ r_copyallowed, r_agencyid
 );
 ```
 
-
-
 ## 2. RCS LMS 발송 (msg\_type=10)
 
 ```sql
@@ -45,8 +47,6 @@ r_copyallowed, r_agencyid
     'AGENCYID'
 );
 ```
-
-
 
 ## 3. RCS MMS 발송 (msg\_type=11) - File ID 자동 치환
 
@@ -79,8 +79,6 @@ r_copyallowed, file_count, file_name1, r_agencyid
 파일이 2개, 3개인 경우 `REPLACE_FILE_NAME1` / `REPLACE_FILE_NAME2` / `REPLACE_FILE_NAME3` 을 각각 사용하며, `FILE_NAME1~3` 컬럼에 대응되는 파일명을 저장합니다. 이미지는 발송 실패 시 MMS 대체발송을 고려하여 최대 3개까지 지원합니다.
 {% endhint %}
 
-
-
 ## 4. RCS TMPL 발송 (msg\_type=12)
 
 ```sql
@@ -103,8 +101,6 @@ r_copyallowed, r_agencyid
     'AGENCYID'
 );
 ```
-
-
 
 ### 4-1. CPaaS RCS TMPL (치환 문자 사용)
 
@@ -133,8 +129,6 @@ callback_num, rcpt_data, r_body, r_messagebaseid
 치환 문자가 없는 경우 `R_BODY` 컬럼에 NULL 또는 빈 문자열을 입력합니다. 텍스트/이미지 템플릿 사용 방식은 동일합니다.
 {% endhint %}
 
-
-
 ## 5. RCS ITMPL 발송 (msg\_type=13)
 
 ```sql
@@ -157,4 +151,3 @@ r_copyallowed, r_agencyid
     'AGENCYID'
 );
 ```
-

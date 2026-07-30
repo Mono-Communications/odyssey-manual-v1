@@ -3,7 +3,7 @@
 <table><thead><tr><th width="179.39996337890625">HA 모드</th><th width="183.800048828125">HA_AUTO_SWITCH</th><th width="249.7999267578125">LOAD_BALANCE_PERCENT</th><th>DB_LEASE_FAIL_CLOSED</th></tr></thead><tbody><tr><td>AA (일반 운영)</td><td>—</td><td>양 노드 합 100 (기본 50:50)</td><td>Y</td></tr><tr><td>AS (단순 운영)</td><td>N (수동)</td><td>— (사용 안함)</td><td>Y</td></tr><tr><td>STANDALONE (개발/테스트)</td><td>—</td><td>—</td><td>N (선택)</td></tr></tbody></table>
 
 {% hint style="warning" %}
-**자주 하는 실수**
+<mark style="color:$warning;">**자주 하는 실수**</mark>
 
 1. **양 노드에 같은 `NODE_NUM` 입력** — 1번 노드는 `NODE_NUM=1`, 2번 노드는 `NODE_NUM=2`로 정확히 다르게 설정하세요.
 2. **`LOAD_BALANCE_PERCENT` 합이 100이 아님** — 합이 100을 초과하면 중복 발송, 미만이면 일부 메시지가 영원히 처리되지 않습니다.

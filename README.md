@@ -1,3 +1,7 @@
+---
+description: Odyssey 통합 매뉴얼 v1 — © ㈜모노커뮤니케이션즈
+---
+
 # Odyssey 통합 매뉴얼
 
 > **버전**: v1

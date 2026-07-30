@@ -1,4 +1,8 @@
-# 17-3. MN Kakao
+# 17-3. 카카오
+
+> **SCHEDULE\_TIME**, **SUBMIT\_TIME**의 포맷은 고객사 DB에 맞게 변경하세요.
+>
+> **수신번호(RCPT\_DATA)**, **발신번호(CALLBACK\_NUM)**&#xB294; 고객사 운영 환경에 맞게 변경하세요.
 
 ## 카카오 알림톡 발송 (msg\_type=6)
 
@@ -18,8 +22,6 @@ callback_num, rcpt_data, k_tmplcode, k_message, k_option
     '버튼(JSON) 내용'
 );
 ```
-
-
 
 ### 강조표기 / 아이템 하이라이트 작성
 
@@ -41,8 +43,6 @@ callback_num, rcpt_data, k_tmplcode, k_message, k_option
 "item":{"list":[{"title":"등록일시","description":"20240801"},
 {"title":"전송결과","description":"#{변수1}"}]}}}
 ```
-
-
 
 ### alimtalk-param=true 모드
 

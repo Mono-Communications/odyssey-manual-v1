@@ -9,7 +9,7 @@
 * RCS / 카카오 발송 사용 여부
 * Fetch 사용 여부
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt="그림 13. 상세 설정 — 애플리케이션 설정, 메시지 전송 토글, RCS/Kakao 전송 설정"><figcaption><p>그림 13. 상세 설정 — 애플리케이션 설정, 메시지 전송 토글, RCS/Kakao 전송 설정</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/13_상세_설정.png" alt="그림 13. 상세 설정 — 애플리케이션 설정, 메시지 전송 토글, RCS/Kakao 전송 설정"><figcaption><p>그림 13. 상세 설정 — 애플리케이션 설정, 메시지 전송 토글, RCS/Kakao 전송 설정</p></figcaption></figure>
 
 
 
@@ -21,7 +21,7 @@
 * RCS 설정: 파일 YN, 자동 업로드, 리포트 카운트, 캐싱
 * 기타: KISA 코드, 대행사 KEY / 브랜드 ID, RCS 통계 사용 여부
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt="그림 14. 사용자 설정 — 타이밍, 디렉토리/인증, RCS 옵션"><figcaption><p>그림 14. 사용자 설정 — 타이밍, 디렉토리/인증, RCS 옵션</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/14_사용자_설정.png" alt="그림 14. 사용자 설정 — 타이밍, 디렉토리/인증, RCS 옵션"><figcaption><p>그림 14. 사용자 설정 — 타이밍, 디렉토리/인증, RCS 옵션</p></figcaption></figure>
 
 {% hint style="info" %}
 설정 변경 후 "저장" 버튼을 클릭하면 사이드바에 변경 내역이 표시됩니다. 최종적으로 사이드바 하단의 **"설정 적용"** 버튼을 눌러야 Odyssey에 반영됩니다.

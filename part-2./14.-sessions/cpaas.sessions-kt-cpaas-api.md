@@ -1,5 +1,5 @@
 ---
-description: KT CPaas API
+description: KT CPaaS API
 ---
 
 # 14-4. cpaas.sessions

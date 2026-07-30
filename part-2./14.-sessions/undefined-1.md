@@ -7,7 +7,7 @@
 {% endhint %}
 
 {% hint style="info" %}
-**자주 하는 실수**
+<mark style="color:$primary;">**자주 하는 실수**</mark>
 
 1. **`max-cnt`를 계약 한도보다 크게 설정** — 게이트웨이가 초과분을 차단하여 일정 시간 발송이 실패합니다. 계약값과 정확히 동일하게 설정하세요.
 2. **`auth-file` 대소문자 불일치** — Linux 환경에서 `auth-file: test391.cert`와 실제 파일 `Test391.cert`는 다른 파일로 인식됩니다.
