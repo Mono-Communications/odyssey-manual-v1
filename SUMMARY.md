@@ -34,7 +34,6 @@
   * [common.execute (사용 메시지 종류)](part-2./11./common.execute.md)
   * [common.transmission (발송 경로 선택)](part-2./11./common.transmission.md)
 * [12. 테이블명 & 건수 & 주기 설정](part-2./12.-and-and/README.md)
-  * [12-1. table-name](part-2./12.-and-and/table-name.md)
   * [12-2. fetch-count](part-2./12.-and-and/fetch-count.md)
   * [12-3. cycle](part-2./12.-and-and/cycle.md)
   * [12-4. 권장 설정 (발송량별)](part-2./12.-and-and/undefined-1.md)
