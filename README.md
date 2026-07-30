@@ -78,7 +78,3 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://app.git
 |     |         |     |      |
 |     |         |     |      |
 |     |         |     |      |
-
-***
-
-<p align="center">© 2026 ㈜모노커뮤니케이션즈. All rights reserved.</p>
