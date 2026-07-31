@@ -1,6 +1,6 @@
 # 20-4. 세션 설정
 
-통신사별 세션(계정) 정보를 카드 형태로 관리합니다. <mark style="color:red;">**`appliaction.yaml`**</mark>의 <mark style="color:green;">**`kt`**</mark> / <mark style="color:green;">**`rcs`**</mark> / <mark style="color:green;">**`cpaas`**</mark> / <mark style="color:green;">**`kakao`**</mark> 영역의 <mark style="color:green;">`sessions`</mark> 에 해당합니다.
+통신사별 세션(계정) 정보를 카드 형태로 관리합니다. <mark style="color:red;">**`appliaction.yml`**</mark>의 <mark style="color:green;">**`kt`**</mark> / <mark style="color:green;">**`rcs`**</mark> / <mark style="color:green;">**`cpaas`**</mark> / <mark style="color:green;">**`kakao`**</mark> 영역의 <mark style="color:green;">`sessions`</mark> 에 해당합니다.
 
 * **KT 크로샷 세션**: RCS IP:PORT, SP ID, SP Password, End User, Auth file 등
 * **KT RCS 세션**: Send URL, Auth URL, 인증 정보 (ID, Secret 등)

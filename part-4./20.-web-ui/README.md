@@ -1,6 +1,6 @@
 # 20. Web UI 상세
 
-**Odyssey**는 브라우저 기반의 웹 설정 UI를 제공합니다. <mark style="color:red;">**`application.yaml`**</mark>을 직접 편집하지 않고도 주요 설정을 변경하고, 실시간 모니터링 및 로그 관리를 수행할 수 있습니다.
+**Odyssey**는 브라우저 기반의 웹 설정 UI를 제공합니다. <mark style="color:red;">**`application.yml`**</mark>을 직접 편집하지 않고도 주요 설정을 변경하고, 실시간 모니터링 및 로그 관리를 수행할 수 있습니다.
 
 ### <mark style="color:blue;">접속 방법</mark> <a href="#undefined" id="undefined"></a>
 

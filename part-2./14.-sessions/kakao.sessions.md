@@ -4,7 +4,7 @@ description: 엠앤와이즈 카카오 직접 연동
 
 # 14-3. kakao.sessions
 
-<mark style="color:red;">`common.transmission.kakao = MN`</mark> 인 경우에 사용합니다. CPaaS 경유 카카오 발송을 사용한다면 본 영역은 비워두어도 됩니다.
+<mark style="color:green;">`common.transmission.kakao = MN`</mark> 인 경우에 사용합니다. CPaaS 경유 카카오 발송을 사용한다면 본 영역은 비워두어도 됩니다.
 
 ```yaml
 kakao:
