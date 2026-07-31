@@ -1,3 +1,3 @@
-# 네트워크 / Peer 감시
+# 15-2. 네트워크 / Peer 감시
 
-양 노드의 IP와 HA 포트를 교차 등록합니다. 동일 호스트에서 다중 인스턴스 테스트가 필요할 때만 `INT_PEER_NODE_CHECK=Y`를 사용합니다.
+양 노드의 IP와 HA 포트를 교차 등록합니다. 동일 호스트에서 다중 인스턴스 테스트가 필요할 때만 <mark style="color:red;">`INT_PEER_NODE_CHECK=Y`</mark>를 사용합니다.

@@ -1,13 +1,11 @@
 # 20-4. 세션 설정
 
-통신사별 세션(계정) 정보를 카드 형태로 관리합니다. YAML의 `kt` / `rcs` / `cpaas` / `kakao` 영역의 `sessions`에 해당합니다.
+통신사별 세션(계정) 정보를 카드 형태로 관리합니다. YAML의 **`kt`** / **`rcs`** / **`cpaas`** / **`kakao`** 영역의 <mark style="color:red;">`sessions`</mark>에 해당합니다.
 
 * **KT 크로샷 세션**: RCS IP:PORT, SP ID, SP Password, End User, Auth file 등
 * **KT RCS 세션**: Send URL, Auth URL, 인증 정보 (ID, Secret 등)
 * **카카오 세션**: 엠앤와이즈 카카오 직접 연동 정보
 * **CPaaS 세션**: KT CPaaS API 연동 정보
-
-
 
 각 세션은 카드 UI로 표시되며, **추가/삭제** 버튼으로 세션을 관리할 수 있습니다.
 

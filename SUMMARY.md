@@ -31,8 +31,8 @@
 * [9. 패스워드 암호화](part-2./9..md)
 * [10. DB 설정](part-2./10.-db.md)
 * [11. 사용 서비스](part-2./11./README.md)
-  * [common.execute (사용 메시지 종류)](part-2./11./common.execute.md)
-  * [common.transmission (발송 경로 선택)](part-2./11./common.transmission.md)
+  * [11-1. common.execute (사용 메시지 종류)](part-2./11./common.execute.md)
+  * [11-2. common.transmission (발송 경로 선택)](part-2./11./common.transmission.md)
 * [12. 테이블명 & 건수 & 주기 설정](part-2./12.-and-and.md)
 * [13. 기본 설정 (common.user)](part-2./13.-common.user.md)
 * [14. 계정 설정 (sessions)](part-2./14.-sessions/README.md)
@@ -49,7 +49,8 @@
   * [15-5. DB Lease (DB 기반 분산 락)](part-2./15.-ha-ha.properties/db-lease-db.md)
   * [15-6. 로드밸런싱 (AA 모드 전용)](part-2./15.-ha-ha.properties/aa.md)
   * [15-7. 권장 설정 (HA 모드별)](part-2./15.-ha-ha.properties/ha-1.md)
-* [16. Poseidon 모니터링 연동](part-2./16.-poseidon.md)
+* [16. Poseidon 모니터링 연동](part-2./16.-poseidon/README.md)
+  * [16-1. Poseidon 수집 목록](part-2./16.-poseidon/16-1.-poseidon.md)
 
 ## Part 3. 발송 쿼리 모음
 
@@ -76,3 +77,7 @@
 * [22. 로그 / 에러 분석](part-4./22..md)
 * [23. 부가 설명](part-4./23..md)
 * [24. 전송 결과 및 참고자료](part-4./24..md)
+* [25. Poseidon 참고자료](part-4./25.-poseidon/README.md)
+  * [25-1.  전송 데이터(매트릭)](part-4./25.-poseidon/25-1..md)
+  * [25-2. 아웃바운드 방화벽 허용](part-4./25.-poseidon/25-2..md)
+  * [22-3. 자주 묻는 질문](part-4./25.-poseidon/22-3..md)

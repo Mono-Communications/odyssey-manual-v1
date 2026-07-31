@@ -43,7 +43,7 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://app.git
 6. [테스트 발송 — SMS 1건](part-1./6.-test-sms.md)
 7. [자주 발생하는 문제](part-1./7.-common-issues/)
 
-#### Part 2. 설정 항목 상세 <a href="#part-2" id="part-2"></a>
+#### Part 2. 화면별 사용법 <a href="#part-2" id="part-2"></a>
 
 8. [환경설정 파일 개요](part-2./8..md)
 9. [패스워드 암호화](part-2./9..md)
@@ -53,21 +53,22 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://app.git
 13. [기본 설정 (common.user)](part-2./13.-common.user.md)
 14. [계정 설정 (sessions)](part-2./14.-sessions/)
 15. [HA 이중화 설정 (ha.properties)](part-2./15.-ha-ha.properties/)
-16. [Poseidon 모니터링 연동](part-2./16.-poseidon.md)
+16. [Poseidon 모니터링 연동](part-2./16.-poseidon/)
 
-#### Part 3. 발송 쿼리 모음 <a href="#part-3" id="part-3"></a>
+#### Part 3. 동작 원리 이해하기 <a href="#part-3" id="part-3"></a>
 
 17. [메시지 타입별 INSERT](part-3./17.-insert/)
 18. [MSG\_TYPE / STATUS 코드](part-3./18.-msg_type-status.md)
 19. [테이블 레이아웃 (MySQL)](part-3./19.-mysql/)
 
-#### Part 4. 운영 가이드 <a href="#part-4" id="part-4"></a>
+#### Part 4. 고객 응대 <a href="#part-4" id="part-4"></a>
 
 20. [Web UI 상세](part-4./20.-web-ui/)
 21. [게이트웨이 IP / PORT](part-4./21.-ip-port.md)
 22. [로그 / 에러 분석](part-4./22..md)
 23. [부가 설명](part-4./23..md)
 24. [전송 결과 및 참고자료](part-4./24..md)
+25. [25.-poseidon](part-4./25.-poseidon/ "mention")
 
 ***
 

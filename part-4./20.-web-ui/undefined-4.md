@@ -1,6 +1,6 @@
 # 20-3. 상세 설정
 
-서비스 사용 여부, 발송 경로, 각종 운영 파라미터를 설정합니다. YAML의 `common.execute`, `common.transmission`, `common.user` 항목에 해당합니다.
+서비스 사용 여부, 발송 경로, 각종 운영 파라미터를 설정합니다. YAML의 <mark style="color:red;">`common.execute`</mark>, <mark style="color:red;">`common.transmission`</mark>, <mark style="color:red;">`common.user`</mark> 항목에 해당합니다.
 
 ### **서비스 토글 영역**
 
@@ -10,8 +10,6 @@
 * Fetch 사용 여부
 
 <figure><img src="../../.gitbook/assets/13_상세_설정.png" alt="그림 13. 상세 설정 — 애플리케이션 설정, 메시지 전송 토글, RCS/Kakao 전송 설정"><figcaption><p>그림 13. 상세 설정 — 애플리케이션 설정, 메시지 전송 토글, RCS/Kakao 전송 설정</p></figcaption></figure>
-
-
 
 ### **사용자 옵션 영역**
 

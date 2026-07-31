@@ -1,4 +1,4 @@
-# common.execute (사용 메시지 종류)
+# 11-1. common.execute (사용 메시지 종류)
 
 ```yml
 execute:
@@ -11,15 +11,7 @@ execute:
   fetch: true
 ```
 
-| 옵션          | 설명                                   |
-| ----------- | ------------------------------------ |
-| **`sms`**   | SMS 발송 사용 여부. (true/false)           |
-| **`lms`**   | LMS 발송 사용 여부. (true/false)           |
-| **`mms`**   | MMS 발송 사용 여부. (true/false)           |
-| **`vms`**   | VMS 발송 사용 여부. (true/false)           |
-| **`rcs`**   | RCS 발송 사용 여부. (true/false)           |
-| **`kakao`** | 카카오 알림톡/친구톡 발송 사용 여부. (true/false)   |
-| **`fetch`** | 로그 테이블 백업(이관) 기능 사용 여부. (true/false) |
+<table><thead><tr><th width="213">옵션</th><th>설명</th></tr></thead><tbody><tr><td><strong><code>sms</code></strong></td><td>SMS 발송 사용 여부. (true/false)</td></tr><tr><td><strong><code>lms</code></strong></td><td>LMS 발송 사용 여부. (true/false)</td></tr><tr><td><strong><code>mms</code></strong></td><td>MMS 발송 사용 여부. (true/false)</td></tr><tr><td><strong><code>vms</code></strong></td><td>VMS 발송 사용 여부. (true/false)</td></tr><tr><td><strong><code>rcs</code></strong></td><td>RCS 발송 사용 여부. (true/false)</td></tr><tr><td><strong><code>kakao</code></strong></td><td>카카오 알림톡/친구톡 발송 사용 여부. (true/false)</td></tr><tr><td><strong><code>fetch</code></strong></td><td>로그 테이블 백업(이관) 기능 사용 여부. (true/false)</td></tr></tbody></table>
 
 {% hint style="info" %}
 <mark style="color:$primary;">**언제 바꾸나요?**</mark>

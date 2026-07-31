@@ -1,6 +1,6 @@
 # 20-2. 데이터베이스 설정
 
-DB 연결 정보를 확인하고 옵션을 변경할 수 있습니다. YAML의 `spring.datasource.hikari` 항목에 해당합니다.
+DB 연결 정보를 확인하고 옵션을 변경할 수 있습니다. YAML의 <mark style="color:red;">`spring.datasource.hikari`</mark> 항목에 해당합니다.
 
 * **DB 타입**: MariaDB, MySQL, MSSQL, Oracle, PostgreSQL 중 선택
 * **JDBC URL / 사용자명**: 보안상 읽기 전용으로 표시됩니다 (YAML에서 직접 수정)
