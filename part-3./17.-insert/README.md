@@ -1,6 +1,6 @@
 # 17. 메시지 타입별 INSERT
 
-RCS고객사 시스템에서 Odyssey 발송 테이블(기본 `ODYSSEY`)에 INSERT 함으로써 메시지가 발송됩니다.
+RCS고객사 시스템에서 Odyssey 발송 테이블(<mark style="color:red;">**`rv-submit`**</mark> — 기본 `ODYSSEY`)에 INSERT 함으로써 메시지가 발송됩니다.
 
 DB 컬럼에 대한 설명은 [19. 테이블 레이아웃 (MySQL)](../19.-mysql/) 을 참고하세요.
 

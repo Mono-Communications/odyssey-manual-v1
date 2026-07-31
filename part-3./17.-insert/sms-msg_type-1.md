@@ -1,8 +1,8 @@
 # 17-1. KT Xroshot
 
-> **SCHEDULE\_TIME**, **SUBMIT\_TIME**의 포맷은 고객사 DB에 맞게 변경하세요.
+> **`SCHEDULE_TIME`**, **`SUBMIT_TIME`**&#xC758; 포맷은 고객사 DB에 맞게 변경하세요.
 >
-> **수신번호(RCPT\_DATA)**, **발신번호(CALLBACK\_NUM)**&#xB294; 고객사 운영 환경에 맞게 변경하세요.
+> 수신번호(**`RCPT_DATA`**), 발신번호(**`CALLBACK_NUM`**)는 고객사 운영 환경에 맞게 변경하세요.
 
 ## <mark style="color:blue;">1. SMS 발송 (msg\_type=1)</mark>
 
@@ -69,16 +69,16 @@ INSERT INTO ODYSSEY (
 
 ### 발송 우선순위
 
-1. **첨부 파일이 있을 때** — 음성 파일 첨부 방식
-2. 첨부 파일이 없고, **message(content)가 있을 때** — TTS convert 방식
+1. <mark style="color:$primary;background-color:$info;">**첨부 파일**</mark><mark style="background-color:$info;">이 있을 때</mark> — 음성 파일 첨부 방식
+2. **첨부 파일이 없고** & <mark style="color:$primary;background-color:$info;">**message(content)**</mark><mark style="background-color:$info;">가 있을 때</mark> — TTS convert 방식
 3. 첨부 파일이 없고, message도 없을 때 — 오류 발생
 
 ### 4-1. 음성 파일 첨부 방식
 
-VMS는 **최대 1개의 파일**을 첨부할 수 있습니다. (2개 이상 첨부 시, 1개만 전송)
+VMS는 **최대 1개의 파일**을 첨부할 수 있습니다. (2개 이상 첨부 시, 1개만 전송)FILE\_NAMEn
 
 {% hint style="danger" %}
-파일을 2개 이상 첨부할 경우 더 먼저 insert 된(**`file_name`** index가 더 낮은)파일 1개만 발송 처리되지만, 메모리 누수가 발생할 수 있으므로, **`file_name`** 에는 반드시 1개의 파일만 insert 하는 것을 권장합니다.
+파일을 2개 이상 첨부할 경우 더 먼저 insert 된( FiLn dex가 더 낮은)파일 1개만 발송 처리되지만, 메모리 누수가 발생할 수 있으므로 **`file_name` 에는 반드시 1개의 파일만 insert 하는 것을 권장**합니다.
 {% endhint %}
 
 ```sql
@@ -104,12 +104,12 @@ INSERT INTO ODYSSEY (
 {% endhint %}
 
 {% hint style="warning" %}
-음성 파일 전송 방식으로 VMS를 발송할 경우, **`file_name`** 이 모두 null 혹은 공백이면 자동으로 TTS convert 방식으로 발송을 시도하며 VMS 발송에 실패합니다.
+음성 파일 전송 방식으로 VMS를 발송 시도 할 때반드시 **`file_name`**&#xC774; 존재해야 합니다. **`file_name` 이 모두 null 혹은 공백**이면 자동으로 TTS convert 방식으로 발송을 시도하며 **VMS 발송에 실패**할 수 있습니다.
 {% endhint %}
 
 ### 4-2. TTS convert 방식
 
-TTS로 변환할 음성 메시지 내용을 message 컬럼에 입력해주세요. message 컬럼의 값이 비어있을 경우 VMS 발송에 실패합니다.
+TTS로 변환할 음성 메시지 내용을 **`message`** 컬럼에 입력해주세요. **`message`** 컬럼의 값이 비어있을 경우 VMS 발송에 실패합니다.
 
 ```sql
 INSERT INTO ODYSSEY (
@@ -130,5 +130,5 @@ INSERT INTO ODYSSEY (
 ```
 
 {% hint style="warning" %}
-TTS convert 방식으로 VMS를 발송할 경우, **`file_name`** 이 모두 null 혹은 공백이어야 합니다. **`file_name`** 에 값이 있을 경우 자동으로 음성 파일 발송을 시도하며 VMS 발송에 실패합니다.
+TTS convert 방식으로 VMS를 발송할 때 **`file_name`** 이 모두 null 혹은 공백이어야 합니다. **`file_name` 에 값이 있을 경우** 자동으로 음성 파일 발송을 시도하며 **VMS 발송에 실패**할 수 있습니다.
 {% endhint %}

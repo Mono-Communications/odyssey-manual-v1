@@ -1,13 +1,13 @@
 # 15. HA 이중화 설정 (ha.properties)
 
-HA 프로파일에서 사용하는 이중화 노드 정보, 게이트웨이 감시, DB 기반 분산 락(Lease), 로드밸런싱 비율을 정의합니다. 파일 위치는 Odyssey 설치 폴더의 `config/ha.properties` 입니다.
+HA 프로파일에서 사용하는 이중화 노드 정보, 게이트웨이 감시, DB 기반 분산 락(Lease), 로드밸런싱 비율을 정의합니다. 파일 위치는 Odyssey 설치 폴더의 **`config/ha.properties`** 입니다.
 
 ```properties
 NODE_CNT=2
 NODE_NUM=1
-HA_MODE=AA # AA | AS | STANDALONE
-HA_MASTER_SLAVE=MASTER # MASTER | SLAVE
-HA_AUTO_SWITCH=N # Y | N (AS mode only)
+HA_MODE=AA                     # AA | AS | STANDALONE
+HA_MASTER_SLAVE=MASTER         # MASTER | SLAVE
+HA_AUTO_SWITCH=N               # Y | N (AS mode only)
 
 # NETWORK
 HA_PORT=12001

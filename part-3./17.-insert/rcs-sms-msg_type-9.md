@@ -1,8 +1,8 @@
 # 17-2. RCS
 
-> SCHEDULE\_TIME, SUBMIT\_TIME의 포맷은 고객사 DB에 맞게 변경하세요.
+> **`SCHEDULE_TIME`**, **`SUBMIT_TIME`**&#xC758; 포맷은 고객사 DB에 맞게 변경하세요.
 >
-> 수신번호(RCPT\_DATA), 발신번호(CALLBACK\_NUM)는 고객사 운영 환경에 맞게 변경하세요.
+> 수신번호(**`RCPT_DATA`**), 발신번호(**`CALLBACK_NUM`**)는 고객사 운영 환경에 맞게 변경하세요.
 
 ## <mark style="color:blue;">**1. RCS SMS 발송 (msg\_type=9)**</mark>
 

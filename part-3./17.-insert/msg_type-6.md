@@ -1,8 +1,8 @@
 # 17-3. 카카오
 
-> **SCHEDULE\_TIME**, **SUBMIT\_TIME**의 포맷은 고객사 DB에 맞게 변경하세요.
+> **`SCHEDULE_TIME`**, **`SUBMIT_TIME`**&#xC758; 포맷은 고객사 DB에 맞게 변경하세요.
 >
-> **수신번호(RCPT\_DATA)**, **발신번호(CALLBACK\_NUM)**&#xB294; 고객사 운영 환경에 맞게 변경하세요.
+> 수신번호(**`RCPT_DATA`**), 발신번호(**`CALLBACK_NUM`**)는 고객사 운영 환경에 맞게 변경하세요.
 
 ## <mark style="color:blue;">카카오 알림톡 발송 (msg\_type=6)</mark>
 
