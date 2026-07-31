@@ -1,6 +1,6 @@
 # 20-3. 상세 설정
 
-서비스 사용 여부, 발송 경로, 각종 운영 파라미터를 설정합니다. YAML의 <mark style="color:red;">`common.execute`</mark>, <mark style="color:red;">`common.transmission`</mark>, <mark style="color:red;">`common.user`</mark> 항목에 해당합니다.
+서비스 사용 여부, 발송 경로, 각종 운영 파라미터를 설정합니다. <mark style="color:red;">**`appliaction.yaml`**</mark> 의 <mark style="color:green;">`common.execute`</mark>, <mark style="color:green;">`common.transmission`</mark>, <mark style="color:green;">`common.user`</mark> 항목에 해당합니다.
 
 ### **서비스 토글 영역**
 
