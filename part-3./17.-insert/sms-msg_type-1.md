@@ -75,10 +75,10 @@ INSERT INTO ODYSSEY (
 
 ### 4-1. 음성 파일 첨부 방식
 
-VMS는 **최대 1개의 파일**을 첨부할 수 있습니다. (2개 이상 첨부 시, 1개만 전송)FILE\_NAMEn
+VMS는 **최대 1개의 파일**을 첨부할 수 있습니다. (2개 이상 첨부 시, 1개만 전송)
 
 {% hint style="danger" %}
-파일을 2개 이상 첨부할 경우 더 먼저 insert 된( FiLn dex가 더 낮은)파일 1개만 발송 처리되지만, 메모리 누수가 발생할 수 있으므로 **`file_name` 에는 반드시 1개의 파일만 insert 하는 것을 권장**합니다.
+파일을 2개 이상 첨부할 경우 더 먼저 insert 된(**`FILE_NAMEn`** index가 더 낮은)파일 1개만 발송 처리되지만, 메모리 누수가 발생할 수 있으므로 **`FILE_NAMEn` 에는 반드시 1개의 파일만 insert 하는 것을 권장**합니다.
 {% endhint %}
 
 ```sql
@@ -100,11 +100,11 @@ INSERT INTO ODYSSEY (
 ```
 
 {% hint style="info" %}
-<mark style="color:$primary;">**첨부 파일 저장 경로 :**</mark> <mark style="color:red;">**`application.yml`**</mark> 의 <mark style="color:red;">`file-dir`</mark> 에 설정된 로컬 주소. DB에 insert한 **`file_name`** 과 실제 파일명이 같아야 합니다.
+<mark style="color:$primary;">**첨부 파일 저장 경로 :**</mark> <mark style="color:red;">**`application.yml`**</mark> 의 <mark style="color:green;">`file-dir`</mark> 에 설정된 로컬 주소. DB에 insert한 **`FILE_NAMEn`** 과 실제 파일명이 같아야 합니다.
 {% endhint %}
 
 {% hint style="warning" %}
-음성 파일 전송 방식으로 VMS를 발송 시도 할 때반드시 **`file_name`**&#xC774; 존재해야 합니다. **`file_name` 이 모두 null 혹은 공백**이면 자동으로 TTS convert 방식으로 발송을 시도하며 **VMS 발송에 실패**할 수 있습니다.
+음성 파일 전송 방식으로 VMS를 발송 시도 할 때반드시 **`FILE_NAMEn`**&#xC774; 존재해야 합니다. **`FILE_NAMEn` 이 모두 null 혹은 공백**이면 자동으로 TTS convert 방식으로 발송을 시도하며 **VMS 발송에 실패**할 수 있습니다.
 {% endhint %}
 
 ### 4-2. TTS convert 방식
@@ -130,5 +130,5 @@ INSERT INTO ODYSSEY (
 ```
 
 {% hint style="warning" %}
-TTS convert 방식으로 VMS를 발송할 때 **`file_name`** 이 모두 null 혹은 공백이어야 합니다. **`file_name` 에 값이 있을 경우** 자동으로 음성 파일 발송을 시도하며 **VMS 발송에 실패**할 수 있습니다.
+TTS convert 방식으로 VMS를 발송할 때 **`FILE_NAMEn`** 이 모두 null 혹은 공백이어야 합니다. **`FILE_NAMEn` 에 값이 있을 경우** 자동으로 음성 파일 발송을 시도하며 **VMS 발송에 실패**할 수 있습니다.
 {% endhint %}
