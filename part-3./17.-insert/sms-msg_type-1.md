@@ -57,7 +57,7 @@ INSERT INTO ODYSSEY (
 ```
 
 {% hint style="info" %}
-<mark style="color:$primary;">**첨부 파일 저장경로 :**</mark> <mark style="color:red;">**`application.yml`**</mark> 의 <mark style="color:red;">`file-dir`</mark> 에 설정된 로컬 주소. DB에 insert한 **`file_name`** 과 실제 파일명이 같아야 합니다.
+<mark style="color:$primary;">**첨부 파일 저장 경로 :**</mark> <mark style="color:red;">**`application.yml`**</mark> 의 <mark style="color:green;">`file-dir`</mark> 에 설정된 로컬 주소. DB에 insert한 **`FILE_NAMEn`** 과 실제 파일명이 같아야 합니다.
 {% endhint %}
 
 ## <mark style="color:blue;">4. VMS 발송 (msg\_type=4)</mark>
@@ -104,7 +104,7 @@ INSERT INTO ODYSSEY (
 {% endhint %}
 
 {% hint style="warning" %}
-음성 파일 전송 방식으로 VMS를 발송 시도 할 때반드시 **`FILE_NAMEn`**&#xC774; 존재해야 합니다. **`FILE_NAMEn` 이 모두 null 혹은 공백**이면 자동으로 TTS convert 방식으로 발송을 시도하며 **VMS 발송에 실패**할 수 있습니다.
+음성 파일 전송 방식으로 VMS를 발송 시도 할 때 반드시 **`FILE_NAMEn`**&#xC774; 존재해야 합니다. **`FILE_NAMEn` 이 모두 null 혹은 공백**이면 자동으로 TTS convert 방식으로 발송을 시도하며 **VMS 발송에 실패**할 수 있습니다.
 {% endhint %}
 
 ### 4-2. TTS convert 방식
