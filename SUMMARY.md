@@ -64,7 +64,7 @@
 ## Part 4. 운영 가이드
 
 * [20. Web UI 상세](part-4./20.-web-ui/README.md)
-  * [20-1. 모니터링](part-4./20.-web-ui/undefined-2.md)
+  * [20-1. 실시간 모니터링](part-4./20.-web-ui/undefined-2.md)
   * [20-2. 발송 금지 시간](part-4./20.-web-ui/undefined-6.md)
   * [20-3. 로그 관리](part-4./20.-web-ui/undefined-7.md)
 * [21. 게이트웨이 IP / PORT](part-4./21.-ip-port.md)
