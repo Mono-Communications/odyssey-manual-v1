@@ -15,7 +15,7 @@
 
 <figure><img src="../../.gitbook/assets/10_3.png" alt="그림 10-3. 모니터링 화면 — DB 현황"><figcaption><p>그림 10-3. 모니터링 화면 — DB 현황</p></figcaption></figure>
 
-
+<figure><img src="../../.gitbook/assets/10_4.png" alt="그림 10-4. 모니터링 화면 — 아웃바운드 채널·소켓 연결"><figcaption><p>그림 10-4. 모니터링 화면 — 아웃바운드 채널·소켓 연결</p></figcaption></figure>
 
 ### <mark style="color:blue;">발송 통계</mark>
 
