@@ -59,7 +59,7 @@
   * [17-3. 카카오](part-3./17.-insert/msg_type-6.md)
   * [17-4. FALLBACK 발송](part-3./17.-insert/fallback-1-2-3.md)
 * [18. MSG\_TYPE / STATUS 코드](part-3./18.-msg_type-status.md)
-* [19. 테이블 레이아웃 (MySQL)](part-3./19.-mysql/README.md)
+* [19. 테이블 레이아웃 (MySQL 기준)](part-3./19.-mysql/README.md)
   * [rv-file (M2X\_RCSFILE) 테이블](part-3./19.-mysql/rv-file-m2x_rcsfile.md)
 
 ## Part 4. 운영 가이드

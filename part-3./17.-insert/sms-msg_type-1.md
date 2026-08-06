@@ -155,7 +155,7 @@ values (
     '84',                -- RESERVED02 : 수신번호 국가코드
     '84982609007',       -- 수신번호 : RESERVED02 값과 무관하게 국가코드 + 발송번호 형식
     'N',
-    0
+    0                    -- GSMS_TYPE : GSMS 문자열 타입 (0: unicode / 1: text)
 );
 ```
 
@@ -169,5 +169,5 @@ values (
 {% endhint %}
 
 {% hint style="info" %}
-GSMS 는 실발송번호가 아닌, <mark style="color:green;">`RESERVED01`</mark> 을 기준으로 대체되는 **sender-id** 값으로 전송됩니다. sender-id 값은 발송하는 고객사 등에 따라 상이하며 sender-id 값은 <mark style="color:red;">**`senderId.yml`**</mark> 에 세팅하여 사용합니다.
+GSMS 는 실발송번호가 아닌, <mark style="color:green;">`RESERVED01`</mark> 을 기준으로 대체되는 **sender-id** 값으로 전송됩니다. sender-id 값은 발송하는 고객사 등에 따라 상이하며 sender-id 값은 <mark style="color:red;">**`senderId.yml`**</mark> 에 세팅하여 사용합니다. (참고 [8-1. senderId.yml](../../part-2./8./8-1.-senderid.yml.md))
 {% endhint %}
