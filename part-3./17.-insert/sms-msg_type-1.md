@@ -1,4 +1,4 @@
-# 17-1. KT Xroshot
+# 17-1. KT Legacy
 
 > **`SCHEDULE_TIME`**, **`SUBMIT_TIME`**&#xC758; 포맷은 고객사 DB에 맞게 변경하세요.
 >
@@ -131,4 +131,43 @@ INSERT INTO ODYSSEY (
 
 {% hint style="warning" %}
 TTS convert 방식으로 VMS를 발송할 때 **`FILE_NAMEn`** 이 모두 null 혹은 공백이어야 합니다. **`FILE_NAMEn` 에 값이 있을 경우** 자동으로 음성 파일 발송을 시도하며 **VMS 발송에 실패**할 수 있습니다.
+{% endhint %}
+
+## <mark style="color:blue;">5. GSMS 발송 (msg\_type=22)</mark>
+
+* GSMS는 **커뮤니즈**로만 발송 가능하며, 따라서 **2차/3차 발송은 없습니다**.
+  * msg\_type\_second, msg\_type\_third : 0
+  * fail\_send : 'N'
+* GSMS는 발송 완료 여부만 확인 가능하며, 수신자의 수신 여부를 확인할 수 없습니다.
+
+```sql
+insert into odyssey_h (
+    msg_type, message, schedule_time, submit_time,
+    reserved01, callback_num, reserved02, rcpt_data,
+    fail_send, gsms_type)
+values (
+    22,
+    '[MonoComm] This is an international character test. GSMS Test.',
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    '82',                -- RESERVED01 : 발송번호 국가코드
+    '15777223',          -- 발송번호
+    '84',                -- RESERVED02 : 수신번호 국가코드
+    '84982609007',       -- 수신번호 : RESERVED02 값과 무관하게 국가코드 + 발송번호 형식
+    'N',
+    0
+);
+```
+
+{% hint style="danger" %}
+<mark style="color:green;">**`RCPT_DATA`**</mark> 의 형식
+
+* 수신번호는 <mark style="color:green;">`RESERVED02`</mark> (수신번호 국가코드) 컬럼 값과 무관하게 국가코드 + 발송번호 형식으로 입력해야 합니다.
+  * **\[예시]** 한국(국가코드) 번호 '010-1234-5678' 로 전송할 경우
+    * 국가코드 : +82 / 전화번호 : 010-1234-5678 **(국가 불문 첫 '0'은 생략)**
+    * <mark style="color:green;">**`RCPT_DATA`**</mark> : **821012345678** (82 + 1012345678)
+{% endhint %}
+
+{% hint style="info" %}
+GSMS 는 실발송번호가 아닌, <mark style="color:green;">`RESERVED01`</mark> 을 기준으로 대체되는 **sender-id** 값으로 전송됩니다. sender-id 값은 발송하는 고객사 등에 따라 상이하며 sender-id 값은 <mark style="color:red;">**`senderId.yml`**</mark> 에 세팅하여 사용합니다.
 {% endhint %}

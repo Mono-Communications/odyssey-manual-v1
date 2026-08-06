@@ -45,7 +45,7 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://app.git
 
 #### Part 2. 화면별 사용법 <a href="#part-2" id="part-2"></a>
 
-8. [환경설정 파일 개요](part-2./8..md)
+8. [환경설정 파일 개요](part-2./8./)
 9. [패스워드 암호화](part-2./9..md)
 10. [DB 설정](part-2./10.-db.md)
 11. [사용 서비스](part-2./11..md)

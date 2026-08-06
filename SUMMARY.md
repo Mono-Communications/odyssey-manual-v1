@@ -27,7 +27,8 @@
 
 ## Part 2. 설정 항목 상세
 
-* [8. 환경설정 파일 개요](part-2./8..md)
+* [8. 환경설정 파일 개요](part-2./8./README.md)
+  * [8-1. senderId.yml](part-2./8./8-1.-senderid.yml.md)
 * [9. 패스워드 암호화](part-2./9..md)
 * [10. DB 설정](part-2./10.-db.md)
 * [11. 사용 서비스](part-2./11..md)
@@ -53,7 +54,7 @@
 ## Part 3. 발송 쿼리 모음
 
 * [17. 메시지 타입별 INSERT](part-3./17.-insert/README.md)
-  * [17-1. KT Xroshot](part-3./17.-insert/sms-msg_type-1.md)
+  * [17-1. KT Legacy](part-3./17.-insert/sms-msg_type-1.md)
   * [17-2. RCS](part-3./17.-insert/rcs-sms-msg_type-9.md)
   * [17-3. 카카오](part-3./17.-insert/msg_type-6.md)
   * [17-4. FALLBACK 발송](part-3./17.-insert/fallback-1-2-3.md)
