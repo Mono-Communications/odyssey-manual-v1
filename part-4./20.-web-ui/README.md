@@ -1,6 +1,6 @@
 # 20. Web UI 상세
 
-**Odyssey**는 브라우저 기반의 웹 설정 UI를 제공합니다. <mark style="color:red;">**`application.yml`**</mark>을 직접 편집하지 않고도 주요 설정을 변경하고, 실시간 모니터링 및 로그 관리를 수행할 수 있습니다.
+**Odyssey**는 브라우저 기반의 웹 설정 UI를 제공합니다. 실시간 모니터링 및 로그 관리를 수행할 수 있습니다.
 
 ### <mark style="color:blue;">접속 방법</mark> <a href="#undefined" id="undefined"></a>
 
@@ -22,4 +22,4 @@ http://[서버IP]:[포트]
   * **콘텐츠 영역**: 선택한 메뉴에 해당하는 설정 화면이 표시됩니다.
 * 사이드바 메뉴 항목은 다음과 같습니다.
 
-<table><thead><tr><th width="140.2000732421875">메뉴</th><th width="236.800048828125">설정 화면</th><th>대응 YAML 설정 참고</th></tr></thead><tbody><tr><td><strong>모니터링</strong></td><td>실시간 발송 현황 + 발송 통계 (일/주/월)</td><td>— (조회 전용)</td></tr><tr><td><strong>데이터베이스</strong></td><td>DB 연결 정보 및 옵션</td><td><a href="../../part-2./10.-db.md">10. DB 설정</a></td></tr><tr><td><strong>상세 설정</strong></td><td>서비스 토글, 발송 파라미터</td><td><a href="../../part-2./11..md">11. 사용 서비스</a> ~ <a href="../../part-2./13.-common.user.md">13. 기본 설정 (common.user)</a></td></tr><tr><td><strong>세션 설정</strong></td><td>통신사별 계정 관리</td><td><a href="../../part-2./14.-sessions/">14. 계정 설정 (sessions)</a></td></tr><tr><td><strong>발송 금지 시간</strong></td><td>시간대별 발송 차단</td><td><a href="../../part-2./13.-common.user.md">13. 기본 설정 (common.user)</a></td></tr><tr><td><strong>로그 저장</strong></td><td>로그 파일 조회 및 다운로드</td><td><a href="../22..md">22. 로그 / 에러 분석</a></td></tr><tr><td><strong>이중화 설정</strong></td><td>HA 운영 모드 선택 + <mark style="color:red;"><strong><code>ha.properties</code></strong></mark> 편집</td><td><a href="../../part-2./15.-ha-ha.properties/">15. HA 이중화 설정 (ha.properties)</a></td></tr></tbody></table>
+<table><thead><tr><th width="198.2000732421875">메뉴</th><th width="482.800048828125">설정 화면</th></tr></thead><tbody><tr><td><strong>파이프라인 모니터링</strong></td><td>실시간 발송 현황 + System Health 체크</td></tr><tr><td><strong>스레드 모니터링</strong></td><td>스레드 현황 및 기능 별 스레드 상세 목록</td></tr><tr><td><strong>DB 모니터링</strong></td><td>DB 연결 정보 및 처리 현황</td></tr><tr><td><strong>로그 모니터링</strong></td><td>로그 파일 조회 및 다운로드</td></tr><tr><td><strong>네트워크 모니터링</strong></td><td>통신사 별 + 계정 별 연결 상태 모니터링</td></tr><tr><td><strong>메시징 통계</strong></td><td>기간 별 발송 현황 및 메시지 타입 별 통계 분석</td></tr><tr><td><strong>발송 금지 시간</strong></td><td>시간대 별 발송 차단 설정</td></tr></tbody></table>
