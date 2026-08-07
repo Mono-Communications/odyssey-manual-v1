@@ -1,4 +1,4 @@
-# 17-1. KT Legacy
+# 17-1. Legacy
 
 > **`SCHEDULE_TIME`**, **`SUBMIT_TIME`**&#xC758; 포맷은 고객사 DB에 맞게 변경하세요.
 >
@@ -63,7 +63,7 @@ INSERT INTO ODYSSEY (
 ## <mark style="color:blue;">4. VMS 발송 (msg\_type=4)</mark>
 
 * VMS는 음성 파일을 직접 첨부하는 방식과 TTS convert로 보내는 방식으로 나뉩니다.
-* VMS는 **KT 크로샷**으로만 발송 가능하며, 따라서 **2차/3차 발송은 없습니다**.
+* VMS는 **KT 크로샷**으로만 발송 가능하며, **2차/3차 발송은 없습니다**.
   * msg\_type\_second, msg\_type\_third : 0
   * fail\_send : 'N'
 
@@ -135,10 +135,10 @@ TTS convert 방식으로 VMS를 발송할 때 **`FILE_NAMEn`** 이 모두 null �
 
 ## <mark style="color:blue;">5. GSMS 발송 (msg\_type=22)</mark>
 
-* GSMS는 **커뮤니즈**로만 발송 가능하며, 따라서 **2차/3차 발송은 없습니다**.
+* GSMS는 **커뮤니즈**로만 발송 가능하며, **2차/3차 발송은 없습니다**.
   * msg\_type\_second, msg\_type\_third : 0
   * fail\_send : 'N'
-* GSMS는 발송 완료 여부만 확인 가능하며, 수신자의 수신 여부를 확인할 수 없습니다.
+* GSMS는 발송 완료 여부만 확인 가능하며, **수신자의 수신 여부를 확인할 수 없습니다**.
 
 ```sql
 insert into odyssey_h (

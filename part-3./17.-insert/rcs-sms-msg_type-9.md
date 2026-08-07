@@ -102,7 +102,7 @@ INSERT INTO ODYSSEY (
 );
 ```
 
-### <mark style="color:purple;">**4-1. CPaaS RCS TMPL (치환 문자 사용)**</mark>
+### <mark style="color:$primary;">**4-1. CPaaS RCS TMPL (치환 문자 사용)**</mark>
 
 **CPaaS RCS 템플릿 발송 시 치환 변수만&#x20;**<mark style="color:red;">**`R_BODY`**</mark>**&#x20;에 JSON 으로 입력합니다.**
 

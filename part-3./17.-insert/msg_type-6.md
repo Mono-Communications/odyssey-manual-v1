@@ -25,7 +25,7 @@ INSERT INTO ODYSSEY (
 
 
 
-### <mark style="color:purple;">강조표기 / 아이템 하이라이트 작성</mark>
+### <mark style="color:$primary;">강조표기 / 아이템 하이라이트 작성</mark>
 
 <mark style="color:red;">**`K_OPTION`**</mark> 컬럼에 JSON 형식으로 입력합니다.
 
@@ -76,7 +76,7 @@ INSERT INTO ODYSSEY (
 
 
 
-### <mark style="color:purple;">alimtalk-param=true 모드</mark>
+### <mark style="color:$primary;">alimtalk-param=true 모드</mark>
 
 CPaaS 세션에서 **`alimtalk-param=`**<mark style="color:green;">**`true`**</mark> 로 설정한 경우, <mark style="color:red;">**`K_MESSAGE`**</mark> 컬럼에 치환 변수만 JSON으로 입력합니다.
 

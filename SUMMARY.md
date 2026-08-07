@@ -54,7 +54,7 @@
 ## Part 3. 발송 쿼리 모음
 
 * [17. 메시지 타입별 INSERT](part-3./17.-insert/README.md)
-  * [17-1. KT Legacy](part-3./17.-insert/sms-msg_type-1.md)
+  * [17-1. Legacy](part-3./17.-insert/sms-msg_type-1.md)
   * [17-2. RCS](part-3./17.-insert/rcs-sms-msg_type-9.md)
   * [17-3. 카카오](part-3./17.-insert/msg_type-6.md)
   * [17-4. FALLBACK 발송](part-3./17.-insert/fallback-1-2-3.md)
