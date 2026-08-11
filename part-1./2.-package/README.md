@@ -6,7 +6,7 @@ Odyssey는 **자립형 배포 패키지**로 구성됩니다. 시스템 자바, 
 
 고객사 OS 에 따라 두 가지 zip 패키지 중 하나를 받습니다.
 
-<table><thead><tr><th width="130">패키지</th><th width="250">산출물</th><th>OS 전용 추가 파일</th></tr></thead><tbody><tr><td><strong>Linux</strong></td><td><mark style="color:red;"><code>odyssey-linux-1.0.0.zip</code></mark></td><td><code>start.sh</code> / <code>stop.sh</code></td></tr><tr><td><strong>Windows</strong></td><td><mark style="color:red;"><code>odyssey-windows-1.0.0.zip</code></mark></td><td><code>start.bat</code> / <code>stop.bat</code> / <code>installService.bat</code> / <code>unInstallService.bat</code></td></tr></tbody></table>
+<table><thead><tr><th width="130">패키지</th><th width="250">산출물</th><th>OS 전용 추가 파일</th></tr></thead><tbody><tr><td><strong>Linux</strong></td><td><mark style="color:red;"><code>odyssey-linux-1.0.0.zip</code></mark></td><td><code>start.sh</code> / <code>stop.sh</code></td></tr><tr><td><strong>Windows</strong></td><td><mark style="color:red;"><code>odyssey-windows-1.0.0.zip</code></mark></td><td><code>start.bat</code> / <code>stop.bat</code> / <code>installService.bat</code> / <code>unInstallService.bat</code> / <code>jenv.bat</code> / <code>renv.bat</code> / <code>nssmX64.exe</code> / <code>nssmX86.exe</code></td></tr></tbody></table>
 
 ## <mark style="color:$primary;">**패키지 폴더 구조**</mark> <a href="#undefined" id="undefined"></a>
 
@@ -32,7 +32,7 @@ Odyssey는 **자립형 배포 패키지**로 구성됩니다. 시스템 자바, 
 
 ### **Windows 전용**
 
-<table><thead><tr><th width="229">항목</th><th>설명</th></tr></thead><tbody><tr><td><strong><code>start.bat</code></strong> / <strong><code>stop.bat</code></strong></td><td>수동 실행 / 종료 스크립트 — 더블 클릭 또는 cmd 에서 실행 ( <a href="2-6.-windows.md">2-6. Windows 전용 파일</a> 참고)</td></tr><tr><td><strong><code>installService.bat</code></strong> / <strong><code>unInstallService.bat</code></strong></td><td>Windows 서비스 등록 / 해제 — 24/7 운영 시 사용</td></tr></tbody></table>
+<table><thead><tr><th width="246">항목</th><th>설명</th></tr></thead><tbody><tr><td><strong><code>start.bat</code></strong> / <strong><code>stop.bat</code></strong></td><td>수동 실행 / 종료 스크립트 — 더블 클릭 또는 cmd 에서 실행 ( <a href="2-6.-windows.md">2-6. Windows 전용 파일</a> 참고)</td></tr><tr><td><strong><code>installService.bat</code></strong> / <strong><code>unInstallService.bat</code></strong></td><td>Windows 서비스 등록 / 해제 — 24/7 운영 시 사용</td></tr><tr><td><strong><code>jenv.bat</code></strong> / <strong><code>renv.bat</code></strong></td><td>JDK 버전 교체</td></tr><tr><td><strong><code>nssmX64.exe</code></strong> / <strong><code>nssmX86.exe</code></strong></td><td>Windows 운영체제 용 실행 파일</td></tr></tbody></table>
 
 {% hint style="info" %}
 **`libs/`** 의자사 코드 jar 는 본체만 포함된 작은 파일(수백 KB)이며, 실제 의존 라이브러리는 외부 **`lib/`** 폴더에서 로딩 됩니다. 드라이버 등 라이브러리 교체 시 **jar 재빌드 없이 `lib/` 안의 jar 만 교체**하면 됩니다.
