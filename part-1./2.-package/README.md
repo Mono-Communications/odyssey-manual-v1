@@ -2,25 +2,17 @@
 
 Odyssey는 **자립형 배포 패키지**로 구성됩니다. 시스템 자바, DB 드라이버, 매퍼 쿼리 등 운영 시 자주 바뀌는 영역을 외부 폴더로 분리해, jar 재빌드 없이 운영 환경에서 직접 변경할 수 있습니다.
 
-## <mark style="color:$primary;">**Linux / Windows 패키지 구분**</mark> <a href="#linux-windows" id="linux-windows"></a>
+## <mark style="color:$primary;">**Linux / Windows OS 전용 파일 구분**</mark> <a href="#linux-windows" id="linux-windows"></a>
 
-고객사 OS 에 따라 두 가지 zip 패키지 중 하나를 받습니다.
-
-<table><thead><tr><th width="130">패키지</th><th width="250">산출물</th><th>OS 전용 추가 파일</th></tr></thead><tbody><tr><td><strong>Linux</strong></td><td><mark style="color:red;"><code>odyssey-linux-1.0.0.zip</code></mark></td><td><code>start.sh</code> / <code>stop.sh</code></td></tr><tr><td><strong>Windows</strong></td><td><mark style="color:red;"><code>odyssey-windows-1.0.0.zip</code></mark></td><td><code>start.bat</code> / <code>stop.bat</code> / <code>installService.bat</code> / <code>unInstallService.bat</code> / <code>jenv.bat</code> / <code>renv.bat</code> / <code>nssmX64.exe</code> / <code>nssmX86.exe</code></td></tr></tbody></table>
+<table><thead><tr><th width="130">OS</th><th width="250">산출물</th><th>OS 전용 추가 파일</th></tr></thead><tbody><tr><td><strong>Linux</strong></td><td><mark style="color:red;"><code>odyssey-linux-1.0.0.zip</code></mark></td><td><code>start.sh</code> / <code>stop.sh</code></td></tr><tr><td><strong>Windows</strong></td><td><mark style="color:red;"><code>odyssey-windows-1.0.0.zip</code></mark></td><td><code>start.bat</code> / <code>stop.bat</code> / <code>installService.bat</code> / <code>unInstallService.bat</code> / <code>jenv.bat</code> / <code>renv.bat</code> / <code>nssmX64.exe</code> / <code>nssmX86.exe</code></td></tr></tbody></table>
 
 ## <mark style="color:$primary;">**패키지 폴더 구조**</mark> <a href="#undefined" id="undefined"></a>
 
-공통 영역(**`config/`**, **`lib/`**, **`auth/`**, **`upload/`** 등) 은 두 패키지가 동일하고, **`jre/` 만 OS별 다른 빌드** (Linux x64 ELF / Windows x64 PE) 가 동봉됩니다.
+공통 영역(**`config/`**, **`lib/`**, **`auth/`**, **`upload/`** 등) 은 두 동d일하고, **`jre/` 만 OS별 다른 빌드** (Linux x64 ELF / Windows x64 PE) 가 동봉됩니다.
 
-{% tabs %}
-{% tab title="Linux 패키지 구성" %}
-<figure><img src="../../.gitbook/assets/01_Linux_패키지.png" alt="그림 1. Linux 패키지 구성"><figcaption><p>그림 1. Linux 패키지 구성</p></figcaption></figure>
-{% endtab %}
+<figure><img src="../../.gitbook/assets/01_package.png" alt=""><figcaption></figcaption></figure>
 
-{% tab title="Windows 패키지 구성" %}
-<figure><img src="../../.gitbook/assets/02_Windows_패키지.png" alt="그림 2. Windows 패키지 구성"><figcaption><p>그림 2. Windows 패키지 구성</p></figcaption></figure>
-{% endtab %}
-{% endtabs %}
+
 
 ### **공통 항목**
 
