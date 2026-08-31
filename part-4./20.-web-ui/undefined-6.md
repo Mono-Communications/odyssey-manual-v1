@@ -9,5 +9,5 @@
 <figure><img src="../../.gitbook/assets/15_set_pause.png" alt="그림 19. 발송 금지 시간 설정 — 요일×시간 그리드 + 템플릿 관리"><figcaption><p>그림 15. 발송 금지 시간 설정 — 요일×시간 그리드 + 템플릿 관리</p></figcaption></figure>
 
 {% hint style="info" %}
-설정 값은 <mark style="color:red;">**`appliaction.yml`**</mark> 이 아닌 **`PAUSE_INFO`** 테이블에 저장됩니다. 광고성 메시지는 정보통신망법에 따라 야간(21:00\~08:00) 발송이 금지되어 있으므로 해당 시간대를 차단 설정해야 합니다.
+설정 값은 <mark style="color:red;">**`application.yml`**</mark> 이 아닌 **`PAUSE_INFO`** 테이블에 저장됩니다. 광고성 메시지는 정보통신망법에 따라 야간(21:00\~08:00) 발송이 금지되어 있으므로 해당 시간대를 차단 설정해야 합니다.
 {% endhint %}

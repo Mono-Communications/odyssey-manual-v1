@@ -120,7 +120,7 @@ INSERT INTO ODYSSEY (
     DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
     DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
     'VMS 발송',
-    'VMS TTS convert 방식 테스트입니다.' -- message 내용 있어야 함
+    'VMS TTS convert 방식 테스트입니다.', -- message 내용 있어야 함
     '발신번호',
     '수신번호',
     0,
@@ -141,7 +141,7 @@ TTS convert 방식으로 VMS를 발송할 때 **`FILE_NAMEn`** 이 모두 null �
 * GSMS는 발송 완료 여부만 확인 가능하며, **수신자의 수신 여부를 확인할 수 없습니다**.
 
 ```sql
-insert into odyssey_h (
+insert into odyssey (
     msg_type, message, schedule_time, submit_time,
     reserved01, callback_num, reserved02, rcpt_data,
     fail_send, gsms_type)

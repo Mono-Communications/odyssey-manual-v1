@@ -5,7 +5,7 @@
 ## PART 1. 시작 가이드
 
 * [1. Odyssey 실행 환경](part-1./1.-environment.md)
-* [2.패키지 구성](part-1./2.-package/README.md)
+* [2. 패키지 구성](part-1./2.-package/README.md)
   * [2-1. config 폴더](part-1./2.-package/2-1.-config.md)
   * [2-2. config/mapper 폴더 — 매퍼 외부화](part-1./2.-package/2-2.-config-mapper.md)
   * [2-3. auth 폴더](part-1./2.-package/2-3.-auth.md)
@@ -73,6 +73,6 @@
 * [23. 부가 설명](part-4./23..md)
 * [24. 전송 결과 및 참고자료](part-4./24..md)
 * [25. Poseidon 참고자료](part-4./25.-poseidon/README.md)
-  * [25-1.  전송 데이터(매트릭)](part-4./25.-poseidon/25-1..md)
+  * [25-1. 전송 데이터(매트릭)](part-4./25.-poseidon/25-1..md)
   * [25-2. 아웃바운드 방화벽 허용](part-4./25.-poseidon/25-2..md)
   * [22-3. 자주 묻는 질문](part-4./25.-poseidon/22-3..md)
