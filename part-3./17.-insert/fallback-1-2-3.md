@@ -8,6 +8,14 @@ description: 1차 실패 시 2차, 3차 순차 발송
 >
 > 수신번호(**`RCPT_DATA`**), 발신번호(**`CALLBACK_NUM`**)는 고객사 운영 환경에 맞게 변경하세요.
 
+## <mark style="color:blue;">DBMS 별 DATE\_FORMAT</mark>
+
+예시 쿼리는 MySQL 기준으로 작성되었습니다. 고객사 DBMS 별 <mark style="color:green;">**`schedule_time`**</mark>, <mark style="color:green;">**`submit_time`**</mark> 등의 컬럼에 대하여 insert 쿼리가 달라질 수 있습니다. 해당 포맷 설명을 참고하세요.
+
+<table><thead><tr><th width="301">DBMS 종류</th><th>DATE_FORMAT</th></tr></thead><tbody><tr><td>MySQL, MariaDB</td><td><code>DATE_FORMAT(NOW(), '%Y%m%d%H%i%s')</code></td></tr><tr><td>Oracle, PostgreSQL</td><td><code>TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')</code></td></tr><tr><td>SQL Server</td><td><code>FORMAT(GETDATE(), 'yyyyMMddHHmmss')</code></td></tr></tbody></table>
+
+## <mark style="color:blue;">FALLBACK</mark>
+
 1차 발송이 실패한 경우 2차, 3차 발송을 자동으로 시도합니다. <mark style="color:red;">**`msg_type`**</mark>**&#x20;/&#x20;**<mark style="color:red;">**`msg_type_second`**</mark>**&#x20;/&#x20;**<mark style="color:red;">**`msg_type_third`**</mark> **순서**로 발송하며, 각 메시지에 필요한 모든 컬럼을 함께 입력하고 <mark style="color:red;">**`FAIL_SEND`**</mark> 를 <mark style="color:green;">**`'Y'`**</mark>로 설정해야 합니다.
 
 ```sql
