@@ -9,7 +9,7 @@ Odyssey는 **자립형 배포 패키지**로 구성됩니다. 시스템 자바, 
 <figure><img src="../../.gitbook/assets/화면 캡처 2026-10-29 150146.png.jpg" alt="Linux 배포 폴더"><figcaption><p>Linux 배포 폴더</p></figcaption></figure>
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="Windows 배포 폴더" %}
 <figure><img src="../../.gitbook/assets/화면 캡처 2026-10-29 150231.jpg" alt="Windows 배포 폴더"><figcaption><p>Windows 배포 폴더</p></figcaption></figure>
 {% endtab %}
 {% endtabs %}
