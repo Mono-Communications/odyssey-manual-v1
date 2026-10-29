@@ -6,8 +6,6 @@ description: Odyssey가 수집한 운영 지표와 에러 정보를 모노커뮤
 
 **Poseidon**은 ㈜모노커뮤니케이션즈가 운영하는 통합 모니터링 플랫폼입니다. 고객사에 설치된 Odyssey가 `발송 성공·실패·큐 적재량, DB·JVM·CPU 상태, 에러 로그` 등의 운영 메트릭을 주기적으로 **Poseidon**으로 전송하고, 이를 수집·축적하여 AI 분석을 결합해 **장애 인지, 원인 분석, 선제 조치**에 활용합니다.
 
-
-
 ```yml
 poseidon:
   enabled: true  # 연동 사용 여부
@@ -40,4 +38,10 @@ poseidon:
 
 {% hint style="info" %}
 Poseidon 연동을 사용하는 경우 **고객사 방화벽에 Poseidon 서버 IP를 등록**해 주셔야 합니다. Odyssey가 주기적으로 외부의 Poseidon 클라우드(`poseidon.url` 항목에 명시된 호스트)로 HTTPS 요청(하트비트, 알림)을 송신해야 하므로 outbound 통신이 차단되어 있는 경우 연동이 동작하지 않습니다.  ([25-2..md](../../part-4./25.-poseidon/25-2..md "mention") 참고)
+{% endhint %}
+
+***
+
+{% hint style="warning" %}
+`poseidon.enabled: true` 로 설정 후 연동하지 않은 상태에서 Odyssey 실행 시 cypher 관련 로그가 발생할 수 있습니다.
 {% endhint %}
