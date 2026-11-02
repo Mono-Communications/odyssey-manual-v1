@@ -42,7 +42,7 @@ INSERT INTO ODYSSEY (
     msg_type, submit_time, schedule_time, subject,
     callback_num, rcpt_data, k_tmplcode, k_message, k_option
 ) VALUES (
-    6,
+    8,
     DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
     DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
     '카카오 알림톡 테스트',
@@ -96,7 +96,7 @@ INSERT INTO ODYSSEY (
     msg_type, submit_time, schedule_time, subject,
     callback_num, rcpt_data, k_tmplcode, k_message, k_option
 ) VALUES (
-    6,
+    8,
     DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
     DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
     '카카오 알림톡 테스트',
