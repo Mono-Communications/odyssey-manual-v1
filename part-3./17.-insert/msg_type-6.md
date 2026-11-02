@@ -10,7 +10,86 @@
 
 <table><thead><tr><th width="301">DBMS 종류</th><th>DATE_FORMAT</th></tr></thead><tbody><tr><td>MySQL, MariaDB</td><td><code>DATE_FORMAT(NOW(), '%Y%m%d%H%i%s')</code></td></tr><tr><td>Oracle, PostgreSQL</td><td><code>TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')</code></td></tr><tr><td>SQL Server</td><td><code>FORMAT(GETDATE(), 'yyyyMMddHHmmss')</code></td></tr></tbody></table>
 
-## <mark style="color:blue;">카카오 알림톡 발송 (msg\_type=6)</mark>
+## alimtalk-param : true
+
+* 파라미터 치환 값만 입력
+  * 템플릿 사용 시 button 등 옵션 값의 치환 값도 모두 **`k_message`** 에 입력
+
+### <mark style="color:blue;">카카오 알림톡 발송 (msg\_type=6)</mark>
+
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message
+) VALUES (
+    6,
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '{"개별1":"홍길동","버튼링크":"mono.co.kr"}'    -- 파라미터값 key:value 형식으로 입력
+);
+```
+
+### <mark style="color:blue;">카카오 알림톡 이미지 발송 (msg\_type=8)</mark>
+
+* image url 별도로 입력하지 않음
+
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message, k_option
+) VALUES (
+    6,
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '{"개별1":"홍길동","버튼링크":"mono.co.kr"}'    -- 파라미터값 key:value 형식으로 입력
+);
+```
+
+## alimtalk-param : false
+
+* 템플릿 사용 시 내용 전부 입력
+  * 템플릿 내용과 입력 내용이 모두 동일해야 하며, 치환값을 내용에 포함하여 입력하면 자동 치환됨
+* 버튼 등 옵션 값의 치환 값은 **`k_option`**&#xC5D0; 별도 입력
+
+### <mark style="color:blue;">카카오 알림톡 발송 (msg\_type=6)</mark>
+
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message, k_option
+) VALUES (
+    6,
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '안녕하세요 홍길동님, 모노커뮤니케이션즈에 가입해주셔서 감사합니다.',
+    '{
+  "button": [
+    {
+      "name": "모노커뮤니케이션즈 홈페이지",
+      "type": "WL",
+      "url_mobile": "http://mono.co.kr",
+      "url_pc": "http://mono.co.kr"
+    }
+  ]
+}'
+);
+```
+
+### <mark style="color:blue;">카카오 알림톡 이미지 발송 (msg\_type=8)</mark>
+
+* image url 별도로 입력하지 않음
 
 ```sql
 INSERT INTO ODYSSEY (
@@ -28,6 +107,16 @@ INSERT INTO ODYSSEY (
     '버튼(JSON) 내용'
 );
 ```
+
+{% hint style="info" %}
+치환 값 입력이 템플릿과 일치하지 않는 경우 해당 치환 문자열은 치환되지 않은 채 key값으로 발송됩니다.
+
+ex. '안녕하세요 #{개별1}님, 모노커뮤니케이션즈에 가입해주셔서 감사합니다.'
+{% endhint %}
+
+{% hint style="warning" %}
+단, 버튼 등 옵션 값의 치환 값이 일치하지 않는 경우 에러가 발생합니다. (errorCode=1030)
+{% endhint %}
 
 
 
@@ -79,34 +168,3 @@ INSERT INTO ODYSSEY (
      }
 }
 ```
-
-
-
-### <mark style="color:$primary;">alimtalk-param=true 모드</mark>
-
-CPaaS 세션에서 **`alimtalk-param=`**<mark style="color:green;">**`true`**</mark> 로 설정한 경우, <mark style="color:red;">**`K_MESSAGE`**</mark> 컬럼에 치환 변수만 JSON으로 입력합니다.
-
-```sql
--- 템플릿 본문 (사전 등록)
--- #{이름}님, 저희 제품을 구매해주셔서 감사합니다.
--- 문의: #{개별1}
-
-INSERT INTO ODYSSEY (
-    subject, msg_type, schedule_time, submit_time,
-    callback_num, rcpt_data, k_message, k_tmplcode, k_adflag
-) VALUES (
-    '카카오 테스트',
-    6,
-    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
-    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
-    '발신번호',
-    '수신번호',
-    '{"이름":"홍길동","개별1":"연구소"}',
-    '템플릿코드',
-    'N'
-);
-```
-
-{% hint style="info" %}
-템플릿 본문에 치환 문자가 없으면 <mark style="color:red;">**`K_MESSAGE`**</mark> 에 NULL 또는 빈 문자열을 입력합니다.
-{% endhint %}
