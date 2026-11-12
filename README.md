@@ -69,3 +69,4 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://app.git
 23. [부가 설명](part-4./23..md)
 24. [전송 결과 및 참고자료](part-4./24..md)
 25. [Poseidon 참고자료](part-4./25.-poseidon/)
+26. [결과코드 매뉴얼](part-4./26.-result-codes.md)
