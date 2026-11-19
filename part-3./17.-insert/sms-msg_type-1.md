@@ -156,10 +156,9 @@ values (
     '[MonoComm] This is an international character test. GSMS Test.',
     DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
     DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
-    '82',                -- RESERVED01 : 발송번호 국가코드
+    '84',                -- RESERVED01 : 수신번호 국가코드
     '15777223',          -- 발송번호
-    '84',                -- RESERVED02 : 수신번호 국가코드
-    '84982609007',       -- 수신번호 : RESERVED02 값과 무관하게 국가코드 + 발송번호 형식
+    '84982609007',       -- 수신번호 : 국가코드 + 발송번호 형식
     'N',
     0                    -- GSMS_TYPE : GSMS 문자열 타입 (0: unicode / 1: text)
 );
@@ -168,12 +167,12 @@ values (
 {% hint style="danger" %}
 <mark style="color:green;">**`RCPT_DATA`**</mark> 의 형식
 
-* 수신번호는 <mark style="color:green;">`RESERVED02`</mark> (수신번호 국가코드) 컬럼 값과 무관하게 국가코드 + 발송번호 형식으로 입력해야 합니다.
-  * **\[예시]** 베트남(국가코드) 번호 '010-12324-5678' 로 전송할 경우
-    * 국가코드 : +84 / 전화번호 : 010-1234-5678 **(국가 불문 첫 '0'은 생략)**
-    * <mark style="color:green;">**`RCPT_DATA`**</mark> : **841012345678** (84 + 1012345678)
+* 수신번호는 <mark style="color:green;">`RESERVED01`</mark> (수신번호 국가코드) 컬럼 값과 무관하게 국가코드 + 발송번호 형식으로 입력해야 합니다.
+  * **\[예시]** 베트남(국가코드) 번호 '982609007' 로 전송할 경우
+    * 국가코드 : +84 / 전화번호 : 982609007 **(국가 불문 첫 '0'은 생략)**
+    * <mark style="color:green;">**`RCPT_DATA`**</mark> : **84982609007** (84 + 982609007)
 {% endhint %}
 
 {% hint style="info" %}
-GSMS 는 실발송번호가 아닌, <mark style="color:green;">`RESERVED02`</mark> 를 기준으로 대체되는 **sender-id** 값으로 전송됩니다. sender-id 값은 발송하는 고객사 등에 따라 상이하며 sender-id 값은 <mark style="color:red;">**`senderId.yml`**</mark> 에 세팅하여 사용합니다. (참고 [8-1. senderId.yml](../../part-2./8./8-1.-senderid.yml.md))
+GSMS 는 실발송번호가 아닌, <mark style="color:green;">`RESERVED01`</mark> 를 기준으로 대체되는 **sender-id** 값으로 전송됩니다. sender-id 값은 발송하는 고객사 등에 따라 상이하며 sender-id 값은 <mark style="color:red;">**`senderId.yml`**</mark> 에 세팅하여 사용합니다. (참고 [8-1. senderId.yml](../../part-2./8./8-1.-senderid.yml.md))
 {% endhint %}
