@@ -149,7 +149,7 @@ TTS convert 방식으로 VMS를 발송할 때 **`FILE_NAMEn`** 이 모두 null �
 ```sql
 insert into odyssey (
     msg_type, message, schedule_time, submit_time,
-    reserved01, callback_num, reserved02, rcpt_data,
+    reserved01, callback_num, rcpt_data,
     fail_send, gsms_type)
 values (
     22,
