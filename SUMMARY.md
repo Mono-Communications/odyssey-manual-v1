@@ -38,7 +38,7 @@
   * [14-1. kt.sessions](part-2./14.-sessions/kt.sessions-kt.md)
   * [14-2. cpaas.sessions](part-2./14.-sessions/cpaas.sessions-kt-cpaas-api.md)
   * [14-3. rcs.sessions](part-2./14.-sessions/rcs.sessions-kt-rcs-hermes-api.md)
-  * [14-3. kakao.sessions](part-2./14.-sessions/kakao.sessions.md)
+  * [14-4. kakao.sessions](part-2./14.-sessions/kakao.sessions.md)
   * [14-5. 게이트웨이 별 권장 설정](part-2./14.-sessions/undefined-1.md)
 * [15. HA 이중화 설정 (ha.properties)](part-2./15.-ha-ha.properties/README.md)
   * [15-1. 노드 정보 / HA 모드](part-2./15.-ha-ha.properties/ha.md)
@@ -60,7 +60,7 @@
   * [17-4. FALLBACK 발송](part-3./17.-insert/fallback-1-2-3.md)
 * [18. MSG\_TYPE / STATUS 코드](part-3./18.-msg_type-status.md)
 * [19. 테이블 레이아웃 (MySQL 기준)](part-3./19.-mysql/README.md)
-  * [rv-file (M2X\_RCSFILE) 테이블](part-3./19.-mysql/rv-file-m2x_rcsfile.md)
+  * [rv-file (ODYSSEY\_RCSFILE) 테이블](part-3./19.-mysql/rv-file-m2x_rcsfile.md)
 
 ## Part 4. 운영 가이드
 
@@ -75,5 +75,5 @@
 * [25. Poseidon 참고자료](part-4./25.-poseidon/README.md)
   * [25-1. 전송 데이터(매트릭)](part-4./25.-poseidon/25-1..md)
   * [25-2. 아웃바운드 방화벽 허용](part-4./25.-poseidon/25-2..md)
-  * [22-3. 자주 묻는 질문](part-4./25.-poseidon/22-3..md)
+  * [25-3. 자주 묻는 질문](part-4./25.-poseidon/22-3..md)
 * [26. 결과코드 매뉴얼](part-4./26.-result-codes.md)

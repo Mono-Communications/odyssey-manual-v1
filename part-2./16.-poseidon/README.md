@@ -6,6 +6,8 @@ description: Odyssey가 수집한 운영 지표와 에러 정보를 모노커뮤
 
 **Poseidon**은 ㈜모노커뮤니케이션즈가 운영하는 통합 모니터링 플랫폼입니다. 고객사에 설치된 Odyssey가 `발송 성공·실패·큐 적재량, DB·JVM·CPU 상태, 에러 로그` 등의 운영 메트릭을 주기적으로 **Poseidon**으로 전송하고, 이를 수집·축적하여 AI 분석을 결합해 **장애 인지, 원인 분석, 선제 조치**에 활용합니다.
 
+Poseidon 연동 설정은 **`config/system.yml`** 에 있습니다.
+
 ```yml
 poseidon:
   enabled: true  # 연동 사용 여부

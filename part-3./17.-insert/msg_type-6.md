@@ -8,7 +8,7 @@
 
 예시 쿼리는 MySQL 기준으로 작성되었습니다. 고객사 DBMS 별 <mark style="color:green;">**`schedule_time`**</mark>, <mark style="color:green;">**`submit_time`**</mark> 등의 컬럼에 대하여 insert 쿼리가 달라질 수 있습니다. 해당 포맷 설명을 참고하세요.
 
-<table><thead><tr><th width="301">DBMS 종류</th><th>DATE_FORMAT</th></tr></thead><tbody><tr><td>MySQL, MariaDB</td><td><code>DATE_FORMAT(NOW(), '%Y%m%d%H%i%s')</code></td></tr><tr><td>Oracle, PostgreSQL</td><td><code>TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')</code></td></tr><tr><td>SQL Server</td><td><code>FORMAT(GETDATE(), 'yyyyMMddHHmmss')</code></td></tr></tbody></table>
+<table><thead><tr><th width="301">DBMS 종류</th><th>DATE_FORMAT</th></tr></thead><tbody><tr><td>MySQL, MariaDB</td><td><code>DATE_FORMAT(NOW(), '%Y%m%d%H%i%s')</code></td></tr><tr><td>Oracle</td><td><code>TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')</code></td></tr><tr><td>PostgreSQL</td><td><code>TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')</code></td></tr><tr><td>SQL Server</td><td><code>FORMAT(GETDATE(), 'yyyyMMddHHmmss')</code></td></tr></tbody></table>
 
 ## alimtalk-param : true
 

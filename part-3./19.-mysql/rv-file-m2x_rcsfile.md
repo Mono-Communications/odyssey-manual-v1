@@ -1,4 +1,4 @@
-# rv-file (M2X\_RCSFILE) 테이블
+# rv-file (ODYSSEY\_RCSFILE) 테이블
 
 {% hint style="info" %}
 해당 내용은 MySQL 기준으로 작성되었습니다. **고객사 별 DBMS에 따라 데이터 타입이 변경**될 수 있으며, 정확한 확인이 필요하면 <mark style="color:red;">**`config/mapper/{{DBMS}}/table.xml`**</mark> 파일을 참고해주세요.

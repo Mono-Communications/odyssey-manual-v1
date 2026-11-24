@@ -2,7 +2,7 @@
 description: KT RCS 직접 연동
 ---
 
-# 14-2. rcs.sessions
+# 14-3. rcs.sessions
 
 ```yaml
 rcs:
