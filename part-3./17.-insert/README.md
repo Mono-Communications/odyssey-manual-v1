@@ -1,12 +1,12 @@
-# 17. 메시지 타입별 INSERT (MySQL 기준)
+# 17. 메시지 타입별 INSERT
 
 * RCS고객사 시스템에서 Odyssey 발송 테이블(<mark style="color:red;">**`rv-submit`**</mark> — 기본 `ODYSSEY`)에 INSERT 함으로써 메시지가 발송됩니다.
 
 {% hint style="info" %}
-예시 쿼리는 MySQL 기준으로 작성되었습니다. 고객사 DBMS 별 <mark style="color:green;">**`schedule_time`**</mark>, <mark style="color:green;">**`submit_time`**</mark> 등의 컬럼에 대하여 insert 쿼리가 달라질 수 있습니다. 각 매뉴얼 상단에 표기된 포맷 설명을 참고하세요.
+예시 쿼리는 DBMS 별 탭(MySQL · MariaDB · PostgreSQL · Oracle · SQL Server)으로 제공합니다. 사용하는 DBMS 의 탭을 선택하세요.
 {% endhint %}
 
-* DB 컬럼에 대한 설명은 [19. 테이블 레이아웃 (MySQL)](../19.-mysql/) 을 참고하세요.
+* DB 컬럼에 대한 설명은 [19. 테이블 레이아웃](../19.-mysql/) 을 참고하세요.
 
 
 

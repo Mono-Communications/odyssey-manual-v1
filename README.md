@@ -8,7 +8,7 @@ description: Odyssey 통합 매뉴얼 v1 — © ㈜모노커뮤니케이션즈
 >
 > **최초작성일**: 2026.04.27
 >
-> **최종수정일**: 2026.11.24
+> **최종수정일**: 2026.11.26
 >
 > **고객센터**: 02-333-7223
 
@@ -59,7 +59,7 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://app.git
 
 17. [메시지 타입별 INSERT](part-3./17.-insert/)
 18. [MSG\_TYPE / STATUS 코드](part-3./18.-msg_type-status.md)
-19. [테이블 레이아웃 (MySQL)](part-3./19.-mysql/)
+19. [테이블 레이아웃](part-3./19.-mysql/)
 
 #### Part 4. 운영 가이드 <a href="#part-4" id="part-4"></a>
 
@@ -70,3 +70,4 @@ Odyssey를 처음 설치한다면 [**Part 1. 시작 가이드**](https://app.git
 24. [전송 결과 및 참고자료](part-4./24..md)
 25. [Poseidon 참고자료](part-4./25.-poseidon/)
 26. [결과코드 매뉴얼](part-4./26.-result-codes.md)
+27. [빠른 문의를 위한 가이드](part-4./27.-inquiry-guide.md)

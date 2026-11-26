@@ -1,14 +1,8 @@
 # 17-3. 카카오
 
-> **`SCHEDULE_TIME`**, **`SUBMIT_TIME`**&#xC758; 포맷은 고객사 DB에 맞게 변경하세요.
+> 예시 쿼리는 DBMS 별 탭으로 제공합니다. 사용하는 DBMS 의 탭을 선택하세요.
 >
 > 수신번호(**`RCPT_DATA`**), 발신번호(**`CALLBACK_NUM`**)는 고객사 운영 환경에 맞게 변경하세요.
-
-## <mark style="color:blue;">DBMS 별 DATE\_FORMAT</mark>
-
-예시 쿼리는 MySQL 기준으로 작성되었습니다. 고객사 DBMS 별 <mark style="color:green;">**`schedule_time`**</mark>, <mark style="color:green;">**`submit_time`**</mark> 등의 컬럼에 대하여 insert 쿼리가 달라질 수 있습니다. 해당 포맷 설명을 참고하세요.
-
-<table><thead><tr><th width="301">DBMS 종류</th><th>DATE_FORMAT</th></tr></thead><tbody><tr><td>MySQL, MariaDB</td><td><code>DATE_FORMAT(NOW(), '%Y%m%d%H%i%s')</code></td></tr><tr><td>Oracle</td><td><code>TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')</code></td></tr><tr><td>PostgreSQL</td><td><code>TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')</code></td></tr><tr><td>SQL Server</td><td><code>FORMAT(GETDATE(), 'yyyyMMddHHmmss')</code></td></tr></tbody></table>
 
 ## alimtalk-param : true
 
@@ -17,6 +11,8 @@
 
 ### <mark style="color:blue;">카카오 알림톡 발송 (msg\_type=6)</mark>
 
+{% tabs %}
+{% tab title="MySQL" %}
 ```sql
 INSERT INTO ODYSSEY (
     msg_type, submit_time, schedule_time, subject,
@@ -32,11 +28,87 @@ INSERT INTO ODYSSEY (
     '{"개별1":"홍길동","버튼링크":"mono.co.kr"}'    -- 파라미터값 key:value 형식으로 입력
 );
 ```
+{% endtab %}
+
+{% tab title="MariaDB" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message
+) VALUES (
+    6,
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '{"개별1":"홍길동","버튼링크":"mono.co.kr"}'    -- 파라미터값 key:value 형식으로 입력
+);
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message
+) VALUES (
+    6,
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '{"개별1":"홍길동","버튼링크":"mono.co.kr"}'    -- 파라미터값 key:value 형식으로 입력
+);
+```
+{% endtab %}
+
+{% tab title="Oracle" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message
+) VALUES (
+    6,
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '{"개별1":"홍길동","버튼링크":"mono.co.kr"}'    -- 파라미터값 key:value 형식으로 입력
+);
+```
+{% endtab %}
+
+{% tab title="SQL Server" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message
+) VALUES (
+    6,
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    N'카카오 알림톡 테스트',
+    N'발신번호',
+    N'수신번호',
+    N'템플릿코드',
+    N'{"개별1":"홍길동","버튼링크":"mono.co.kr"}'    -- 파라미터값 key:value 형식으로 입력
+);
+```
+{% endtab %}
+{% endtabs %}
 
 ### <mark style="color:blue;">카카오 알림톡 이미지 발송 (msg\_type=8)</mark>
 
 * image url 별도로 입력하지 않음
 
+{% tabs %}
+{% tab title="MySQL" %}
 ```sql
 INSERT INTO ODYSSEY (
     msg_type, submit_time, schedule_time, subject,
@@ -52,6 +124,80 @@ INSERT INTO ODYSSEY (
     '{"개별1":"홍길동","버튼링크":"mono.co.kr"}'    -- 파라미터값 key:value 형식으로 입력
 );
 ```
+{% endtab %}
+
+{% tab title="MariaDB" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message, k_option
+) VALUES (
+    8,
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '{"개별1":"홍길동","버튼링크":"mono.co.kr"}'    -- 파라미터값 key:value 형식으로 입력
+);
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message, k_option
+) VALUES (
+    8,
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '{"개별1":"홍길동","버튼링크":"mono.co.kr"}'    -- 파라미터값 key:value 형식으로 입력
+);
+```
+{% endtab %}
+
+{% tab title="Oracle" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message, k_option
+) VALUES (
+    8,
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '{"개별1":"홍길동","버튼링크":"mono.co.kr"}'    -- 파라미터값 key:value 형식으로 입력
+);
+```
+{% endtab %}
+
+{% tab title="SQL Server" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message, k_option
+) VALUES (
+    8,
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    N'카카오 알림톡 테스트',
+    N'발신번호',
+    N'수신번호',
+    N'템플릿코드',
+    N'{"개별1":"홍길동","버튼링크":"mono.co.kr"}'    -- 파라미터값 key:value 형식으로 입력
+);
+```
+{% endtab %}
+{% endtabs %}
 
 ## alimtalk-param : false
 
@@ -61,6 +207,8 @@ INSERT INTO ODYSSEY (
 
 ### <mark style="color:blue;">카카오 알림톡 발송 (msg\_type=6)</mark>
 
+{% tabs %}
+{% tab title="MySQL" %}
 ```sql
 INSERT INTO ODYSSEY (
     msg_type, submit_time, schedule_time, subject,
@@ -86,11 +234,127 @@ INSERT INTO ODYSSEY (
 }'
 );
 ```
+{% endtab %}
+
+{% tab title="MariaDB" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message, k_option
+) VALUES (
+    6,
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '안녕하세요 홍길동님, 모노커뮤니케이션즈에 가입해주셔서 감사합니다.',
+    '{
+  "button": [
+    {
+      "name": "모노커뮤니케이션즈 홈페이지",
+      "type": "WL",
+      "url_mobile": "http://mono.co.kr",
+      "url_pc": "http://mono.co.kr"
+    }
+  ]
+}'
+);
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message, k_option
+) VALUES (
+    6,
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '안녕하세요 홍길동님, 모노커뮤니케이션즈에 가입해주셔서 감사합니다.',
+    '{
+  "button": [
+    {
+      "name": "모노커뮤니케이션즈 홈페이지",
+      "type": "WL",
+      "url_mobile": "http://mono.co.kr",
+      "url_pc": "http://mono.co.kr"
+    }
+  ]
+}'
+);
+```
+{% endtab %}
+
+{% tab title="Oracle" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message, k_option
+) VALUES (
+    6,
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '안녕하세요 홍길동님, 모노커뮤니케이션즈에 가입해주셔서 감사합니다.',
+    '{
+  "button": [
+    {
+      "name": "모노커뮤니케이션즈 홈페이지",
+      "type": "WL",
+      "url_mobile": "http://mono.co.kr",
+      "url_pc": "http://mono.co.kr"
+    }
+  ]
+}'
+);
+```
+{% endtab %}
+
+{% tab title="SQL Server" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message, k_option
+) VALUES (
+    6,
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    N'카카오 알림톡 테스트',
+    N'발신번호',
+    N'수신번호',
+    N'템플릿코드',
+    N'안녕하세요 홍길동님, 모노커뮤니케이션즈에 가입해주셔서 감사합니다.',
+    N'{
+  "button": [
+    {
+      "name": "모노커뮤니케이션즈 홈페이지",
+      "type": "WL",
+      "url_mobile": "http://mono.co.kr",
+      "url_pc": "http://mono.co.kr"
+    }
+  ]
+}'
+);
+```
+{% endtab %}
+{% endtabs %}
 
 ### <mark style="color:blue;">카카오 알림톡 이미지 발송 (msg\_type=8)</mark>
 
 * image url 별도로 입력하지 않음
 
+{% tabs %}
+{% tab title="MySQL" %}
 ```sql
 INSERT INTO ODYSSEY (
     msg_type, submit_time, schedule_time, subject,
@@ -107,6 +371,84 @@ INSERT INTO ODYSSEY (
     '버튼(JSON) 내용'
 );
 ```
+{% endtab %}
+
+{% tab title="MariaDB" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message, k_option
+) VALUES (
+    8,
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '알림톡 메시지 내용',
+    '버튼(JSON) 내용'
+);
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message, k_option
+) VALUES (
+    8,
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '알림톡 메시지 내용',
+    '버튼(JSON) 내용'
+);
+```
+{% endtab %}
+
+{% tab title="Oracle" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message, k_option
+) VALUES (
+    8,
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    '카카오 알림톡 테스트',
+    '발신번호',
+    '수신번호',
+    '템플릿코드',
+    '알림톡 메시지 내용',
+    '버튼(JSON) 내용'
+);
+```
+{% endtab %}
+
+{% tab title="SQL Server" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject,
+    callback_num, rcpt_data, k_tmplcode, k_message, k_option
+) VALUES (
+    8,
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    N'카카오 알림톡 테스트',
+    N'발신번호',
+    N'수신번호',
+    N'템플릿코드',
+    N'알림톡 메시지 내용',
+    N'버튼(JSON) 내용'
+);
+```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 치환 값 입력이 템플릿과 일치하지 않는 경우 해당 치환 문자열은 치환되지 않은 채 key값으로 발송됩니다.

@@ -1,17 +1,13 @@
 # 17-1. Legacy
 
-> **`SCHEDULE_TIME`**, **`SUBMIT_TIME`**&#xC758; 포맷은 고객사 DB에 맞게 변경하세요.
+> 예시 쿼리는 DBMS 별 탭으로 제공합니다. 사용하는 DBMS 의 탭을 선택하세요.
 >
 > 수신번호(**`RCPT_DATA`**), 발신번호(**`CALLBACK_NUM`**)는 고객사 운영 환경에 맞게 변경하세요.
 
-## <mark style="color:blue;">DBMS 별 DATE\_FORMAT</mark>
-
-예시 쿼리는 MySQL 기준으로 작성되었습니다. 고객사 DBMS 별 <mark style="color:green;">**`schedule_time`**</mark>, <mark style="color:green;">**`submit_time`**</mark> 등의 컬럼에 대하여 insert 쿼리가 달라질 수 있습니다. 해당 포맷 설명을 참고하세요.
-
-<table><thead><tr><th width="301">DBMS 종류</th><th>DATE_FORMAT</th></tr></thead><tbody><tr><td>MySQL, MariaDB</td><td><code>DATE_FORMAT(NOW(), '%Y%m%d%H%i%s')</code></td></tr><tr><td>Oracle</td><td><code>TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')</code></td></tr><tr><td>PostgreSQL</td><td><code>TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')</code></td></tr><tr><td>SQL Server</td><td><code>FORMAT(GETDATE(), 'yyyyMMddHHmmss')</code></td></tr></tbody></table>
-
 ## <mark style="color:blue;">1. SMS 발송 (msg\_type=1)</mark>
 
+{% tabs %}
+{% tab title="MySQL" %}
 ```sql
 INSERT INTO ODYSSEY (
     MSG_TYPE, SCHEDULE_TIME, SUBMIT_TIME, MESSAGE, CALLBACK_NUM, RCPT_DATA
@@ -24,9 +20,73 @@ INSERT INTO ODYSSEY (
     '01012345678'                   -- 수신번호 (특수문자 제외)
 );
 ```
+{% endtab %}
+
+{% tab title="MariaDB" %}
+```sql
+INSERT INTO ODYSSEY (
+    MSG_TYPE, SCHEDULE_TIME, SUBMIT_TIME, MESSAGE, CALLBACK_NUM, RCPT_DATA
+) VALUES (
+    1,                              -- 1 = SMS
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    '[테스트] Odyssey 첫 발송 성공!',
+    '0212345678',                   -- 발신번호 (특수문자 제외)
+    '01012345678'                   -- 수신번호 (특수문자 제외)
+);
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+```sql
+INSERT INTO ODYSSEY (
+    MSG_TYPE, SCHEDULE_TIME, SUBMIT_TIME, MESSAGE, CALLBACK_NUM, RCPT_DATA
+) VALUES (
+    1,                              -- 1 = SMS
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    '[테스트] Odyssey 첫 발송 성공!',
+    '0212345678',                   -- 발신번호 (특수문자 제외)
+    '01012345678'                   -- 수신번호 (특수문자 제외)
+);
+```
+{% endtab %}
+
+{% tab title="Oracle" %}
+```sql
+INSERT INTO ODYSSEY (
+    MSG_TYPE, SCHEDULE_TIME, SUBMIT_TIME, MESSAGE, CALLBACK_NUM, RCPT_DATA
+) VALUES (
+    1,                              -- 1 = SMS
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    '[테스트] Odyssey 첫 발송 성공!',
+    '0212345678',                   -- 발신번호 (특수문자 제외)
+    '01012345678'                   -- 수신번호 (특수문자 제외)
+);
+```
+{% endtab %}
+
+{% tab title="SQL Server" %}
+```sql
+INSERT INTO ODYSSEY (
+    MSG_TYPE, SCHEDULE_TIME, SUBMIT_TIME, MESSAGE, CALLBACK_NUM, RCPT_DATA
+) VALUES (
+    1,                              -- 1 = SMS
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    N'[테스트] Odyssey 첫 발송 성공!',
+    N'0212345678',                   -- 발신번호 (특수문자 제외)
+    N'01012345678'                   -- 수신번호 (특수문자 제외)
+);
+```
+{% endtab %}
+{% endtabs %}
 
 ## <mark style="color:blue;">2. LMS 발송 (msg\_type=2)</mark>
 
+{% tabs %}
+{% tab title="MySQL" %}
 ```sql
 INSERT INTO ODYSSEY (
     msg_type, submit_time, schedule_time, subject, message, callback_num, rcpt_data
@@ -40,11 +100,79 @@ INSERT INTO ODYSSEY (
     '수신번호'
 );
 ```
+{% endtab %}
+
+{% tab title="MariaDB" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message, callback_num, rcpt_data
+) VALUES (
+    2,
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    'LMS 발송',
+    'LMS 테스트 발송입니다.',
+    '발신번호',
+    '수신번호'
+);
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message, callback_num, rcpt_data
+) VALUES (
+    2,
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    'LMS 발송',
+    'LMS 테스트 발송입니다.',
+    '발신번호',
+    '수신번호'
+);
+```
+{% endtab %}
+
+{% tab title="Oracle" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message, callback_num, rcpt_data
+) VALUES (
+    2,
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    'LMS 발송',
+    'LMS 테스트 발송입니다.',
+    '발신번호',
+    '수신번호'
+);
+```
+{% endtab %}
+
+{% tab title="SQL Server" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message, callback_num, rcpt_data
+) VALUES (
+    2,
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    N'LMS 발송',
+    N'LMS 테스트 발송입니다.',
+    N'발신번호',
+    N'수신번호'
+);
+```
+{% endtab %}
+{% endtabs %}
 
 ## <mark style="color:blue;">3. MMS 발송 (msg\_type=3)</mark>
 
 MMS는 **최대 3개의 파일**을 첨부할 수 있습니다.
 
+{% tabs %}
+{% tab title="MySQL" %}
 ```sql
 INSERT INTO ODYSSEY (
     msg_type, submit_time, schedule_time, subject, message,
@@ -61,6 +189,84 @@ INSERT INTO ODYSSEY (
     'test.jpg' -- 첨부파일명 (file-dir 폴더에 사전 저장)
 );
 ```
+{% endtab %}
+
+{% tab title="MariaDB" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message,
+    callback_num, rcpt_data, file_count, file_name1
+) VALUES (
+    3,
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    'MMS 발송',
+    'MMS 테스트 발송입니다.',
+    '발신번호',
+    '수신번호',
+    1,
+    'test.jpg' -- 첨부파일명 (file-dir 폴더에 사전 저장)
+);
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message,
+    callback_num, rcpt_data, file_count, file_name1
+) VALUES (
+    3,
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    'MMS 발송',
+    'MMS 테스트 발송입니다.',
+    '발신번호',
+    '수신번호',
+    1,
+    'test.jpg' -- 첨부파일명 (file-dir 폴더에 사전 저장)
+);
+```
+{% endtab %}
+
+{% tab title="Oracle" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message,
+    callback_num, rcpt_data, file_count, file_name1
+) VALUES (
+    3,
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    'MMS 발송',
+    'MMS 테스트 발송입니다.',
+    '발신번호',
+    '수신번호',
+    1,
+    'test.jpg' -- 첨부파일명 (file-dir 폴더에 사전 저장)
+);
+```
+{% endtab %}
+
+{% tab title="SQL Server" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message,
+    callback_num, rcpt_data, file_count, file_name1
+) VALUES (
+    3,
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    N'MMS 발송',
+    N'MMS 테스트 발송입니다.',
+    N'발신번호',
+    N'수신번호',
+    1,
+    N'test.jpg' -- 첨부파일명 (file-dir 폴더에 사전 저장)
+);
+```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 <mark style="color:$primary;">**첨부 파일 저장 경로 :**</mark> <mark style="color:red;">**`application.yml`**</mark> 의 <mark style="color:green;">`file-dir`</mark> 에 설정된 로컬 주소. DB에 insert한 **`FILE_NAMEn`** 과 실제 파일명이 같아야 합니다.
@@ -87,6 +293,8 @@ VMS는 **1개의 파일**만 첨부할 수 있습니다. 음성 파일이 있으
 파일을 2개 이상 입력하면 **첫 번째 파일**(**`FILE_NAMEn`** 번호가 가장 낮은 파일) 1개만 발송되고 나머지는 무시됩니다. **`FILE_NAMEn` 에는 1개의 파일만 입력**하세요.
 {% endhint %}
 
+{% tabs %}
+{% tab title="MySQL" %}
 ```sql
 INSERT INTO ODYSSEY (
     msg_type, submit_time, schedule_time, subject, message,
@@ -104,6 +312,88 @@ INSERT INTO ODYSSEY (
     'N'                                -- fail_send(2,3차 발송) 없음
 );
 ```
+{% endtab %}
+
+{% tab title="MariaDB" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message,
+    callback_num, rcpt_data, file_count, file_name1, fail_send
+) VALUES (
+    4,
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    'VMS 발송',
+    '',                                -- message : 음성 파일이 있으면 발송에 쓰이지 않음
+    '발신번호',
+    '수신번호',
+    1,                                -- 첨부파일 있어야 함
+    'file.wav',                     -- 첨부파일명 (file-dir 폴더에 사전 저장)
+    'N'                                -- fail_send(2,3차 발송) 없음
+);
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message,
+    callback_num, rcpt_data, file_count, file_name1, fail_send
+) VALUES (
+    4,
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    'VMS 발송',
+    '',                                -- message : 음성 파일이 있으면 발송에 쓰이지 않음
+    '발신번호',
+    '수신번호',
+    1,                                -- 첨부파일 있어야 함
+    'file.wav',                     -- 첨부파일명 (file-dir 폴더에 사전 저장)
+    'N'                                -- fail_send(2,3차 발송) 없음
+);
+```
+{% endtab %}
+
+{% tab title="Oracle" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message,
+    callback_num, rcpt_data, file_count, file_name1, fail_send
+) VALUES (
+    4,
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    'VMS 발송',
+    '',                                -- message : 음성 파일이 있으면 발송에 쓰이지 않음
+    '발신번호',
+    '수신번호',
+    1,                                -- 첨부파일 있어야 함
+    'file.wav',                     -- 첨부파일명 (file-dir 폴더에 사전 저장)
+    'N'                                -- fail_send(2,3차 발송) 없음
+);
+```
+{% endtab %}
+
+{% tab title="SQL Server" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message,
+    callback_num, rcpt_data, file_count, file_name1, fail_send
+) VALUES (
+    4,
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    N'VMS 발송',
+    N'',                                -- message : 음성 파일이 있으면 발송에 쓰이지 않음
+    N'발신번호',
+    N'수신번호',
+    1,                                -- 첨부파일 있어야 함
+    N'file.wav',                     -- 첨부파일명 (file-dir 폴더에 사전 저장)
+    N'N'                                -- fail_send(2,3차 발송) 없음
+);
+```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 <mark style="color:$primary;">**첨부 파일 저장 경로 :**</mark> <mark style="color:red;">**`application.yml`**</mark> 의 <mark style="color:green;">`file-dir`</mark> 에 설정된 로컬 주소. DB에 insert한 **`FILE_NAMEn`** 과 실제 파일명이 같아야 합니다.
@@ -117,6 +407,8 @@ INSERT INTO ODYSSEY (
 
 TTS로 변환할 음성 메시지 내용을 **`message`** 컬럼에 입력해주세요. **`message`** 컬럼의 값이 비어있을 경우 VMS 발송에 실패합니다.
 
+{% tabs %}
+{% tab title="MySQL" %}
 ```sql
 INSERT INTO ODYSSEY (
     msg_type, submit_time, schedule_time, subject, message,
@@ -134,6 +426,88 @@ INSERT INTO ODYSSEY (
     'N'                                -- fail_send(2,3차 발송) 없음
 );
 ```
+{% endtab %}
+
+{% tab title="MariaDB" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message,
+    callback_num, rcpt_data, file_count, file_name1, fail_send
+) VALUES (
+    4,
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    'VMS 발송',
+    'VMS TTS convert 방식 테스트입니다.', -- message 내용 있어야 함
+    '발신번호',
+    '수신번호',
+    0,
+    '',                                 -- 첨부파일 없어야 함
+    'N'                                -- fail_send(2,3차 발송) 없음
+);
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message,
+    callback_num, rcpt_data, file_count, file_name1, fail_send
+) VALUES (
+    4,
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    'VMS 발송',
+    'VMS TTS convert 방식 테스트입니다.', -- message 내용 있어야 함
+    '발신번호',
+    '수신번호',
+    0,
+    '',                                 -- 첨부파일 없어야 함
+    'N'                                -- fail_send(2,3차 발송) 없음
+);
+```
+{% endtab %}
+
+{% tab title="Oracle" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message,
+    callback_num, rcpt_data, file_count, file_name1, fail_send
+) VALUES (
+    4,
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    'VMS 발송',
+    'VMS TTS convert 방식 테스트입니다.', -- message 내용 있어야 함
+    '발신번호',
+    '수신번호',
+    0,
+    '',                                 -- 첨부파일 없어야 함
+    'N'                                -- fail_send(2,3차 발송) 없음
+);
+```
+{% endtab %}
+
+{% tab title="SQL Server" %}
+```sql
+INSERT INTO ODYSSEY (
+    msg_type, submit_time, schedule_time, subject, message,
+    callback_num, rcpt_data, file_count, file_name1, fail_send
+) VALUES (
+    4,
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    N'VMS 발송',
+    N'VMS TTS convert 방식 테스트입니다.', -- message 내용 있어야 함
+    N'발신번호',
+    N'수신번호',
+    0,
+    N'',                                 -- 첨부파일 없어야 함
+    N'N'                                -- fail_send(2,3차 발송) 없음
+);
+```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="warning" %}
 TTS convert 방식으로 VMS를 발송할 때 **`FILE_NAMEn`** 이 모두 null 혹은 공백이어야 합니다. **`FILE_NAMEn` 에 값이 있을 경우** 자동으로 음성 파일 발송을 시도하며 **VMS 발송에 실패**할 수 있습니다.
@@ -146,6 +520,8 @@ TTS convert 방식으로 VMS를 발송할 때 **`FILE_NAMEn`** 이 모두 null �
   * fail\_send : 'N'
 * GSMS는 발송 완료 여부만 확인 가능하며, **수신자의 수신 여부를 확인할 수 없습니다**.
 
+{% tabs %}
+{% tab title="MySQL" %}
 ```sql
 insert into odyssey (
     msg_type, message, schedule_time, submit_time,
@@ -163,6 +539,88 @@ values (
     0                    -- GSMS_TYPE : GSMS 문자열 타입 (0: unicode / 1: text)
 );
 ```
+{% endtab %}
+
+{% tab title="MariaDB" %}
+```sql
+insert into odyssey (
+    msg_type, message, schedule_time, submit_time,
+    reserved01, callback_num, rcpt_data,
+    fail_send, gsms_type)
+values (
+    22,
+    '[MonoComm] This is an international character test. GSMS Test.',
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+    '84',                -- RESERVED01 : 수신번호 국가코드
+    '15777223',          -- 발송번호
+    '84982609007',       -- 수신번호 : 국가코드 + 발송번호 형식
+    'N',
+    0                    -- GSMS_TYPE : GSMS 문자열 타입 (0: unicode / 1: text)
+);
+```
+{% endtab %}
+
+{% tab title="PostgreSQL" %}
+```sql
+insert into odyssey (
+    msg_type, message, schedule_time, submit_time,
+    reserved01, callback_num, rcpt_data,
+    fail_send, gsms_type)
+values (
+    22,
+    '[MonoComm] This is an international character test. GSMS Test.',
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    TO_CHAR(NOW(), 'YYYYMMDDHH24MISS'),
+    '84',                -- RESERVED01 : 수신번호 국가코드
+    '15777223',          -- 발송번호
+    '84982609007',       -- 수신번호 : 국가코드 + 발송번호 형식
+    'N',
+    0                    -- GSMS_TYPE : GSMS 문자열 타입 (0: unicode / 1: text)
+);
+```
+{% endtab %}
+
+{% tab title="Oracle" %}
+```sql
+insert into odyssey (
+    msg_type, message, schedule_time, submit_time,
+    reserved01, callback_num, rcpt_data,
+    fail_send, gsms_type)
+values (
+    22,
+    '[MonoComm] This is an international character test. GSMS Test.',
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'),
+    '84',                -- RESERVED01 : 수신번호 국가코드
+    '15777223',          -- 발송번호
+    '84982609007',       -- 수신번호 : 국가코드 + 발송번호 형식
+    'N',
+    0                    -- GSMS_TYPE : GSMS 문자열 타입 (0: unicode / 1: text)
+);
+```
+{% endtab %}
+
+{% tab title="SQL Server" %}
+```sql
+insert into odyssey (
+    msg_type, message, schedule_time, submit_time,
+    reserved01, callback_num, rcpt_data,
+    fail_send, gsms_type)
+values (
+    22,
+    N'[MonoComm] This is an international character test. GSMS Test.',
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    FORMAT(GETDATE(), 'yyyyMMddHHmmss'),
+    N'84',                -- RESERVED01 : 수신번호 국가코드
+    N'15777223',          -- 발송번호
+    N'84982609007',       -- 수신번호 : 국가코드 + 발송번호 형식
+    N'N',
+    0                    -- GSMS_TYPE : GSMS 문자열 타입 (0: unicode / 1: text)
+);
+```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="danger" %}
 <mark style="color:green;">**`RCPT_DATA`**</mark> 의 형식

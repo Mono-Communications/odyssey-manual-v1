@@ -41,25 +41,20 @@
   * [14-4. kakao.sessions](part-2./14.-sessions/kakao.sessions.md)
   * [14-5. 게이트웨이 별 권장 설정](part-2./14.-sessions/undefined-1.md)
 * [15. HA 이중화 설정 (ha.properties)](part-2./15.-ha-ha.properties/README.md)
-  * [15-1. 노드 정보 / HA 모드](part-2./15.-ha-ha.properties/ha.md)
-  * [15-2. 네트워크 / Peer 감시](part-2./15.-ha-ha.properties/peer.md)
-  * [15-3. Gateway PING 체크](part-2./15.-ha-ha.properties/gateway-ping.md)
-  * [15-4. HA 타이밍 / 안정성 / Split-Brain 방지](part-2./15.-ha-ha.properties/ha-split-brain.md)
-  * [15-5. DB Lease (DB 기반 분산 락)](part-2./15.-ha-ha.properties/db-lease-db.md)
-  * [15-6. 로드밸런싱 (AA 모드 전용)](part-2./15.-ha-ha.properties/aa.md)
-  * [15-7. 권장 설정 (HA 모드별)](part-2./15.-ha-ha.properties/ha-1.md)
+  * [15-1. ha.properties 항목별 요약](part-2./15.-ha-ha.properties/ha.md)
+  * [15-2. 권장 설정 (HA 모드별)](part-2./15.-ha-ha.properties/ha-1.md)
 * [16. Poseidon 모니터링 연동](part-2./16.-poseidon/README.md)
   * [16-1. Poseidon 수집 목록](part-2./16.-poseidon/16-1.-poseidon.md)
 
 ## Part 3. 발송 쿼리 모음
 
-* [17. 메시지 타입별 INSERT (MySQL 기준)](part-3./17.-insert/README.md)
+* [17. 메시지 타입별 INSERT](part-3./17.-insert/README.md)
   * [17-1. Legacy](part-3./17.-insert/sms-msg_type-1.md)
   * [17-2. RCS](part-3./17.-insert/rcs-sms-msg_type-9.md)
   * [17-3. 카카오](part-3./17.-insert/msg_type-6.md)
   * [17-4. FALLBACK 발송](part-3./17.-insert/fallback-1-2-3.md)
 * [18. MSG\_TYPE / STATUS 코드](part-3./18.-msg_type-status.md)
-* [19. 테이블 레이아웃 (MySQL 기준)](part-3./19.-mysql/README.md)
+* [19. 테이블 레이아웃](part-3./19.-mysql/README.md)
   * [RCS 파일 (M2X\_RCSFILE) 테이블](part-3./19.-mysql/rv-file-m2x_rcsfile.md)
 
 ## Part 4. 운영 가이드
@@ -77,3 +72,4 @@
   * [25-2. 아웃바운드 방화벽 허용](part-4./25.-poseidon/25-2..md)
   * [25-3. 자주 묻는 질문](part-4./25.-poseidon/22-3..md)
 * [26. 결과코드 매뉴얼](part-4./26.-result-codes.md)
+* [27. 빠른 문의를 위한 가이드](part-4./27.-inquiry-guide.md)

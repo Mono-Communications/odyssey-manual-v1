@@ -1,4 +1,4 @@
-# 15-7. 권장 설정 (HA 모드별)
+# 15-2. 권장 설정 (HA 모드별)
 
 <table><thead><tr><th width="160.39996337890625">HA 모드</th><th width="174.800048828125">HA_AUTO_SWITCH</th><th width="226.7999267578125">LOAD_BALANCE_PERCENT</th><th>DB_LEASE_FAIL_CLOSED</th></tr></thead><tbody><tr><td><mark style="color:red;"><code>AA</code></mark> (일반 운영)</td><td>—</td><td>양 노드 합 100 (기본 50:50)</td><td><mark style="color:red;"><code>Y</code></mark></td></tr><tr><td><mark style="color:red;"><code>AS</code></mark> (단순 운영)</td><td><mark style="color:red;"><code>N</code></mark> (수동)</td><td>— (사용 안함)</td><td><mark style="color:red;"><code>Y</code></mark></td></tr><tr><td><mark style="color:red;"><code>STANDALONE</code></mark> (개발/테스트)</td><td>—</td><td>—</td><td><code>N</code> (선택)</td></tr></tbody></table>
 
