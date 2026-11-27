@@ -73,3 +73,7 @@
   * [25-3. 자주 묻는 질문](part-4./25.-poseidon/22-3..md)
 * [26. 결과코드 매뉴얼](part-4./26.-result-codes.md)
 * [27. 빠른 문의를 위한 가이드](part-4./27.-inquiry-guide.md)
+
+## Part 5. 고객 규격별 안내
+
+* [28. MTS 규격](part-5./28.-mts.md)
